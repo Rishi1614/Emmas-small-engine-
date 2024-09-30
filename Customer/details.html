@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Customer Details</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../CSS/styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="../JavaScript/main.js"></script>
+    </head>
+    <body>
+        <header class="head-section">
+            <nav>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-close" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a class="head-nav-link" id ="home-link" href="../index.html">Home</a></li>
+                        <li><a class="head-nav-link" id ="customer-link" href="../Customer/index.html">Customers</a></li>
+                        <li><a class="head-nav-link" id ="request-link" href="../RepairRequest/index.html">Repair Request</a></li>
+                        <li><a class="head-nav-link"  id ="repair-link"href="../Repair/index.html">Repairs</a></li>
+                        <li><a class="head-nav-link" id ="equipment-link"  href="../Equipment/index.html">Equipment</a></li>
+                        <li><a class="head-nav-link"  id ="lookup-link"href="../Lookup/index.html">Lookup Tables</a></li>
+                        <li><a class="head-nav-link" id ="report-link"  href="../Reports/index.html">Reports</a></li>
+                        <li><a class = "logout-btn" alt ="Log out button" style = "margin-top:210px" class = "log-out-button">Log out</a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+    
+            <!-- SCRIPT FOR HAMBURGER MENU -->
+            <script>var navLinks = document.getElementById("navLinks");
+    
+                function showMenu() {
+                    navLinks.style.right = "0";
+                    document.querySelector(".fa-bars").style.display = "none";
+                    document.querySelector(".fa-close").style.display = "block";
+                }
+    
+                function hideMenu() {
+                    navLinks.style.right = "-200px";
+                    document.querySelector(".fa-bars").style.display = "block";
+                    document.querySelector(".fa-close").style.display = "none";
+                }</script>
+                
+        </header>
+        <main class = "main-section">
+            <section class = "main-heading">
+                <div class = "main-heading-title">
+                    <h2 class = "main-heading-head">Jane Doe
+                        <span class = "help-btn-group tooltip-help">
+                            <button class ="help-btn">?</button>  
+                            <span class="tooltip-help-text">
+                                <strong>Customer Help:</strong>
+                                <p>1- In the Details Page you can see all the data from the customer you select in the index. </p><br/>
+                                <p>2- The first table represent all the repair request the customer has and the actual status for each request.</p><br/>
+                                <p>3- The second table represent all the equipment the customer has brought to the store, you can see the equiment name and model.</p><br/>
+                                <p>4- You can start the repair process for the qeuipment just by clicking on respective "Select" for the equipment.</p>
+                                <p>5- In the bottom you have 3 buttons: "back" throws you to the customer index page, "edit customer" redirects you to the page where you can 
+                                    edit the customer and "delete customer" gives you the option to delete a customer in case that it was created by mistake.</p>
+                                <i></i>
+                            </span>
+                        </span>
+                    </h2>
+                    <h3 class = "main-heading-sub">123 Maple Street, Toronto</h3>
+                    <div class ="main-heading-brdcrumbs">
+                        <a class="brdcrumbs-link" href="../index.html">Home</a> | 
+                        <a class="brdcrumbs-link" href="./index.html">Customers</a> |
+                        <a class="brdcrumbs-link" href="./details.html">Details</a>
+                    </div>
+                </div>
+            </section>
+            <div class = "main-body">
+            
+                <div class = "main-info-item">
+                    <div class = "main-info-display" style ="width:30%">
+                        <div class = "info-row">
+                            <div class ="info-label">First Name:</div> 
+                            <div class = "info-field">Jane</div>
+                        </div>
+                        <div class = "info-row">
+                            <div class ="info-label">Middle Name:</div> 
+                            <div class = "info-field">Montes</div>
+                        </div>
+                        <div class = "info-row">
+                            <div class ="info-label">Last Name:</div> 
+                            <div class = "info-field">Doe</div>
+                        </div>
+                        <div class = "info-row">
+                            <div class ="info-label">Phone Number:</div> 
+                            <div class = "info-field">(123)456-7890</div>     
+                        </div>
+                        <div class = "info-row">
+                            <div class ="info-label">Email:</div> 
+                            <div class = "info-field">janedoe@gmail.com</div>     
+                        </div>
+                        <div class = "info-row">
+                            <div class ="info-label">Address:</div> 
+                            <div class = "info-field">123 Maple Street</div>  
+                        </div>
+                        <div class = "info-row">
+                            <div class ="info-label">City:</div> 
+                            <div class = "info-field">St. Catharines</div>  
+                        </div>
+                        <div class = "info-row">
+                            <div class ="info-label">Province:</div> 
+                            <div class = "info-field">Ontario</div>  
+                        </div>
+                        <div class = "info-row">
+                            <div class ="info-label">Postal Code:</div> 
+                            <div class = "info-field">M5V 2N9</div>  
+                        </div>
+                    </div>
+                    <div class="table-group">
+                        <div class = "main-info-table" style="width: 100%;">
+                            <div class ="table-header-group">
+                                <h2 class="table-header">Requests</h2> 
+                            </div>
+                            <table class="main-table-container">
+                                <tr class="main-info-tablerow">
+                                    <th class="main-info-tablehead" style="width:20%">Request Date</th>
+                                    <th class="main-info-tablehead" style="width:15%">Type</th>
+                                    <th class="main-info-tablehead" style="width:34%">Equipment Name</th>
+                                    <th class="main-info-tablehead" style="width:30%">Status</th>
+                                <!-- </tr>
+                                <tr class="main-info-tablerow">
+                                    
+                                    <td class="main-info-tabledata" style="width:20%">2023-12-11</td>
+                                    <td class="main-info-tabledata" style="width:15%">Repair</td>
+                                    <td class="main-info-tabledata" style="width:34%">Excavator EX-2000</td>
+                                    <td class="main-info-tabledata" style="width:30%">Completed</td>
+                                </tr>
+                                <tr class="main-info-tablerow">
+                                    
+                                    <td class="main-info-tabledata" style="width:20%">2023-10-25</td>
+                                    <td class="main-info-tabledata" style="width:15%">Sale</td>
+                                    <td class="main-info-tabledata" style="width:34%">Welding Machine WM-500</td>
+                                    <td class="main-info-tabledata" style="width:30%">Pending</td>
+                                </tr>
+                                <tr class="main-info-tablerow">
+                                    
+                                    <td class="main-info-tabledata" style="width:20%">2023-09-15</td>
+                                    <td class="main-info-tabledata" style="width:15%">Repair</td>
+                                    <td class="main-info-tabledata" style="width:34%">Power Drill PD-550</td>
+                                    <td class="main-info-tabledata" style="width:30%">Pending</td>
+                                </tr>
+                                <tr class="main-info-tablerow">
+                                    
+                                    <td class="main-info-tabledata" style="width:20%">2023-08-05</td>
+                                    <td class="main-info-tabledata" style="width:15%">Sale</td>
+                                    <td class="main-info-tabledata" style="width:34%">Chainsaw CS-700</td>
+                                    <td class="main-info-tabledata" style="width:30%">Completed</td>
+                                </tr> -->
+                            </table>
+                            <div class="main-info-paging">
+                                <button class = "paging-btn">&lt;&lt; Previous</button>
+                                <button class = "paging-btn">1</button>
+                                <button class = "paging-btn">2</button>
+                                <button class = "paging-btn">Next &gt;&gt;</button>
+                            </div>
+                        </div>
+                        <div class = "main-info-table" style="width: 100%;">
+                            <div class ="table-header-group">
+                                <h2 class="table-header">Equipment</h2> 
+                            </div>
+                            <table class = "main-table-container" >
+                                <tr class = "main-info-tablerow" >
+                                    <th class = "main-info-tablehead" style="width:20%">Start Repair?</th>
+                                    <th class = "main-info-tablehead" style="width:40%">Equipment Name</th>
+                                    <th class = "main-info-tablehead" style="width:30%">Equipment Model</th>
+                                </tr>
+                                <tr class = "main-info-tablerow">
+                                    <td class = "main-info-tabledata" style="width:20%"><a href="../RepairRequest/insert.html" style="text-decoration: underline; color: blue;">Select</a></td>
+                                    <td class = "main-info-tabledata" style="width:40%">Lawnmower LM-2122</td>
+                                    <td class = "main-info-tabledata"style="width:30%">YP50830</td>
+                                <!-- </tr>
+                                <tr class = "main-info-tablerow">
+                                    <td class = "main-info-tabledata" style="width:20%"><a href="../Equipment/details.html" style="text-decoration: underline; color: blue;">Select</a></td>
+                                    <td class = "main-info-tabledata" style="width:40%">Welding Machine WM-500</td>
+                                    <td class = "main-info-tabledata"style="width:30%">GE15000</td>
+                                </tr>
+                                <tr class = "main-info-tablerow">
+                                    <td class = "main-info-tabledata" style="width:20%"><a href="../Equipment/details.html" style="text-decoration: underline; color: blue;">Select</a></td>
+                                    <td class = "main-info-tabledata" style="width:40%">Power Drill PD-550</td>
+                                    <td class = "main-info-tabledata"style="width:30%">PG798340</td>
+                                </tr>
+                                <tr class = "main-info-tablerow">
+                                    <td class = "main-info-tabledata" style="width:20%"><a href="../Equipment/details.html" style="text-decoration: underline; color: blue;">Select</a></td>
+                                    <td class = "main-info-tabledata" style="width:40%">Chainsaw CS-700</td>
+                                    <td class = "main-info-tabledata"style="width:30%">ZXH95000</td>
+                                </tr> -->
+                            </table>
+                            <div class="main-info-paging">
+                                <button class = "paging-btn">&lt;&lt; Previous</button>
+                                <button class = "paging-btn">1</button>
+                                <button class = "paging-btn">2</button>
+                                <button class = "paging-btn">Next &gt;&gt;</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class = "main-info-buttons">
+                    <a class = "btn-info btn-edit" href = "./index.html">Back</a>
+                    <a class = "btn-info btn-edit" href = "./edit.html">Edit Customer</a>
+                    <button onclick = "confirm('Are you sure you want to delete this Customer?');" class = "btn-info btn-delete">Delete Customer</button>
+                </div>
+            </div>
+            <footer class = "foot-main">
+                <p class="foot-text">Application Developed By<br>
+                    &copy;2023 TechLink Software</p>
+                <!--<a href="" class ="foot-text">Sitemap</a>-->
+                <div class ="foot-links">
+                    <a href= ""><img class = "contact-link" src="../images/facebook-icon.png" alt="ESE Facebook page"></a>
+                    <a href= ""> <img class = "contact-link" src="../images/instagram-icon.png" alt="ESE Instragram page"></a>
+                    <a href= ""><img class = "contact-link"  src="../images/twitter-icon.png" alt="ESE Twitter page"></a>
+                    <a href= ""><img class = "contact-link" src="../images/whatsapp-icon.png" alt="ESE Whatsapp contact"></a>
+                </div>
+            </footer>
+        </main>
+    </body>
+</html>

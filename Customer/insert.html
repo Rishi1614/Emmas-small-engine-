@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Customer Insert</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../CSS/styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="../JavaScript/main.js"></script>
+    </head>
+    <body>
+        <header class="head-section">
+            <nav>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-close" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a class="head-nav-link" id ="home-link" href="../index.html">Home</a></li>
+                        <li><a class="head-nav-link" id ="customer-link" href="../Customer/index.html">Customers</a></li>
+                        <li><a class="head-nav-link" id ="request-link" href="../RepairRequest/index.html">Repair Request</a></li>
+                        <li><a class="head-nav-link"  id ="repair-link"href="../Repair/index.html">Repairs</a></li>
+                        <li><a class="head-nav-link" id ="equipment-link"  href="../Equipment/index.html">Equipment</a></li>
+                        <li><a class="head-nav-link"  id ="lookup-link"href="../Lookup/index.html">Lookup Tables</a></li>
+                        <li><a class="head-nav-link" id ="report-link"  href="../Reports/index.html">Reports</a></li>
+                        <li><a class = "logout-btn" alt ="Log out button" style = "margin-top:210px" class = "log-out-button">Log out</a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+    
+            <!-- SCRIPT FOR HAMBURGER MENU -->
+            <script>var navLinks = document.getElementById("navLinks");
+    
+                function showMenu() {
+                    navLinks.style.right = "0";
+                    document.querySelector(".fa-bars").style.display = "none";
+                    document.querySelector(".fa-close").style.display = "block";
+                }
+    
+                function hideMenu() {
+                    navLinks.style.right = "-200px";
+                    document.querySelector(".fa-bars").style.display = "block";
+                    document.querySelector(".fa-close").style.display = "none";
+                }</script>
+                
+        </header>
+        <main class="main-section">
+            <section class="main-heading">
+                <div class="main-heading-title">
+                    <h2 class="main-heading-head">Customer Insert
+                        <span class = "help-btn-group tooltip-help">
+                            <button class ="help-btn">?</button>  
+                            <span class="tooltip-help-text">
+                                <strong>Customer Help:</strong>
+                                <p> 1- In the Customer Page you can see the ID,Customer Full Name, email and phone number.  </p><br/>
+                                <p>2- You can click on any customer box and you will see all of their details, incluiding previous repair request, 
+                                    equipments they have brought and add a new repair request.</p><br/>
+                                <p> 3- By clicking on "+ Add new Customer" button you can add a new customer with all of their details.</p><br/>
+                                <p> 4- With the search bar you can search a customer by their name, sort them or group them.</p>
+                                <i></i>
+                            </span>
+                        </span>
+                    </h2>
+                    <div class ="main-heading-brdcrumbs">
+                        <a class="brdcrumbs-link" href="../index.html">Home</a> | 
+                        <a class="brdcrumbs-link" href="./index.html">Customers</a> |
+                        <a class="brdcrumbs-link" href="./details.html">Insert</a>
+                    </div>
+                </div>
+            </section>
+            <div class="main-body">
+                <div class="main-info-item">
+                    <div class="main-info-display" style="width: 35%;">
+                        <div class="info-row">
+                            <label class ="info-label" for="input-cust-fname">First Name:</label> 
+                            <div class="info-field tooltip">
+                                <div id="error-message" class ="info-field-error">Required Field</div>
+                                <input id="input-cust-fname" class="info-field-input" type="text" value=""> 
+                                <div class="right">
+                                    <h3>Customer First Name</h3>
+                                    <p>Ex: Jane Doe</p>
+                                    <i></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <label class ="info-label" for="input-cust-midname">Middle Name:</label> 
+                            <div class="info-field tooltip">
+                                <div class ="info-field-error"></div>
+                                <input id="input-cust-midname" value ="" class="info-field-input" type="text" value=""> 
+                                <div class="right">
+                                    <h3>Customer Middle Name</h3>
+                                    <p>Ex: Montes</p>
+                                    <i></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <label class ="info-label"  for="input-cust-lname">Last Name:</label> 
+                            <div class="info-field tooltip">
+                                <div id="error-message1" class ="info-field-error">Required Field</div>
+                                <input id="input-cust-lname" class="info-field-input" type="text" value=""> 
+                                <div class="right">
+                                    <h3>Customer Last Name</h3>
+                                    <p>Ex: Doe</p>
+                                    <i></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <label class ="info-label" for="input-cust-phone">Phone Number:</label> 
+                            <div class="info-field tooltip">
+                                <div id="error-message2" class="info-field-error">Required Field</div>
+                                <input id="input-cust-phone" class="info-field-input" type="tel" value=""> 
+                                <div class="right">
+                                    <h3>Customer Phone Number</h3>
+                                    <p>Ex: 905-0844-0499</p>
+                                    <i></i>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <label class ="info-label" for="input-cust-email">Email:</label> 
+                            <div class="info-field tooltip">
+                                <div id="error-message3" class ="info-field-error">Required Field</div>
+                                <input id="input-cust-email" class="info-field-input" type="tel" value=""> 
+                                <div class="right">
+                                    <h3>Customer Email Address</h3>
+                                    <p>Ex: jdoe@email.com</p>
+                                    <i></i>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <label class ="info-label" for="input-cust-street">Address:</label> 
+                            <div class="info-field tooltip">
+                                <div id="error-message4" class ="info-field-error">Required Field</div>
+                                <input id="input-cust-street" class="info-field-input" type="text" value=""> 
+                                <div class="right">
+                                    <h3>Customer Address (Street)</h3>
+                                    <p>Ex: 123 Maple Street</p>
+                                    <i></i>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <label class ="info-label"  for="input-cust-city">City:</label> 
+                            <div class="info-field tooltip">
+                                <div id="error-message5" class ="info-field-error">Required Field</div>
+                                <div class="info-field-group">
+                                    <select class="info-select" id="input-cust-city" style = "width:82%">
+                                        <option selected value="">Select a City..</option>
+                                        <option value="AB">Welland</option>
+                                        <option value="BC">Pelham</option>
+                                        <option value="MB">Port Colborne</option>
+                                        <option value="NB">WainFleet</option>
+                                        <option value="NL" >St. Catharines</option>
+                                        <option value="NS">Niagara Falls</option>
+                                        <option value="NT">Thorold</option>
+                                        <option value="NU">Niagara-On-The-Lake</option>
+                                    </select>
+                                    <div class="right">
+                                        <h3>Customer City</h3>
+                                        <p>Please select a city in the given dropdown or add a city if not present</p>
+                                        <i></i>
+                                    </div> 
+                                    <button style ="width:15%;" class ="btn-edit-dropdowns">+</button>
+                                </div>
+                                
+                               
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <label class ="info-label"  for="input-cust-province">Province:</label> 
+                            <div class="info-field tooltip"> 
+                                <div id="error-message6" class ="info-field-error">Required Field</div>
+                                <div class="info-field-group">
+                                    <select class="info-select" id="input-cust-province" style = "width:82%"> 
+                                        <option selected value-="">Select a Province..</option>
+                                        <option value="AB">Alberta</option>
+                                        <option value="BC">British Columbia</option>
+                                        <option value="MB">Manitoba</option>
+                                        <option value="NB">New Brunswick</option>
+                                        <option value="NL">Newfoundland and Labrador</option>
+                                        <option value="NS">Nova Scotia</option>
+                                        <option value="NT">Northwest Territories</option>
+                                        <option value="NU">Nunavut</option>
+                                        <option value="ON">Ontario</option>
+                                        <option value="PE">Prince Edward Island</option>
+                                        <option value="QC">Quebec</option>
+                                        <option value="SK">Saskatchewan</option>
+                                        <option value="YT">Yukon</option>
+                                    </select>
+                                    <div class="right">
+                                        <h3>Customer Province</h3>
+                                        <p>Please select a province in the given dropdown or add a province if not present</p>
+                                        <i></i>
+                                    </div> 
+                                    <button style ="width:15%;" class ="btn-edit-dropdowns">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <label class ="info-label"  for="input-cust-pcode">Postal Code:</label> 
+                            <div class="info-field tooltip">
+                                <div id="error-message7" class ="info-field-error">Required Field</div>
+                                <input id="input-cust-pcode" class="info-field-input" type="text" value=""> 
+                                <div class="right">
+                                    <h3>Customer Postal Code</h3>
+                                    <p>Ex: L2M 7P1</p>
+                                    <i></i>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex;flex-direction: column; justify-content: space-evenly;">
+                        <div class = "main-info-table" style="width: 100%;">
+                            <div class ="table-header-group">
+                                <h2 class="table-header">Equipment</h2> 
+                            </div>
+                            <table class = "main-table-container">
+                                <tr class = "main-info-tablerow" >
+                                    <th class = "main-info-tablehead" style ="width:17%"><a href="../Equipment/insert.html"><button class ="btn-table">New(+)</button></a></th>
+                                    <th class = "main-info-tablehead" style="width:40%">Equipment Name</th>
+                                    <th class = "main-info-tablehead" style="width:30%">Equipment Model</th>
+                                </tr>
+                             </table>
+                        </div>
+                    </div>
+                   
+                </div>
+                </div>
+                <div class="main-info-buttons">
+                    <a href="./details.html" class="btn-info btn-edit">Save</a>
+                    <a href="./index.html" class="btn-info btn-edit">Cancel</a>
+                </div>
+            </div>
+            <footer class = "foot-main">
+                <p class="foot-text">Application Developed By<br>
+                    &copy;2023 TechLink Software</p>
+                <!--<a href="" class ="foot-text">Sitemap</a>-->
+                <div class ="foot-links">
+                    <a href= ""><img class = "contact-link" src="../images/facebook-icon.png" alt="ESE Facebook page"></a>
+                    <a href= ""> <img class = "contact-link" src="../images/instagram-icon.png" alt="ESE Instragram page"></a>
+                    <a href= ""><img class = "contact-link"  src="../images/twitter-icon.png" alt="ESE Twitter page"></a>
+                    <a href= ""><img class = "contact-link" src="../images/whatsapp-icon.png" alt="ESE Whatsapp contact"></a>
+                </div>
+            </footer>
+        </main>
+        <script>
+            const errorMessage = document.getElementById('error-message');
+            const fName = document.getElementById('input-cust-fname');
+        
+                // Add an event listener to the textarea for the 'input' event
+                fName.addEventListener('input', function () {
+                    // Check if the textarea has text
+                    if (fName.value.trim() !== '') {
+                        // If it has text, hide the error message
+                        errorMessage.style.display = 'none';
+                    } else {
+                        // If it's empty, show the error message
+                        errorMessage.style.display = 'block';
+                    }
+                });
+
+            const errorMessage1 = document.getElementById('error-message1');
+            const lName = document.getElementById('input-cust-lname');
+            lName.addEventListener('input', function () {
+                if (lName.value.trim() !== '') {
+                    errorMessage1.style.display = 'none';
+                } else {
+                    errorMessage1.style.display = 'block';
+                }
+            });
+
+            const errorMessage2 = document.getElementById('error-message2');
+            const phone = document.getElementById('input-cust-phone');
+            phone.addEventListener('input', function () {
+                if (phone.value.trim() !== '') {
+                    errorMessage2.style.display = 'none';
+                } else {
+                    errorMessage2.style.display = 'block';
+                }
+            });
+
+            const errorMessage3 = document.getElementById('error-message3');
+            const email = document.getElementById('input-cust-email');
+            email.addEventListener('input', function () {
+                if (email.value.trim() !== '') {
+                    errorMessage3.style.display = 'none';
+                } else {
+                    errorMessage3.style.display = 'block';
+                }
+            });
+
+            const errorMessage4 = document.getElementById('error-message4');
+            const address = document.getElementById('input-cust-street');
+            address.addEventListener('input', function () {
+                if (address.value.trim() !== '') {
+                    errorMessage4.style.display = 'none';
+                } else {
+                    errorMessage4.style.display = 'block';
+                }
+            });
+
+            const errorMessage7 = document.getElementById('error-message7');
+            const postal = document.getElementById('input-cust-pcode');
+            postal.addEventListener('input', function () {
+                if (postal.value.trim() !== '') {
+                    errorMessage7.style.display = 'none';
+                } else {
+                    errorMessage7.style.display = 'block';
+                }
+            });
+
+            const errorMessage5 = document.getElementById('error-message5');
+            const city = document.getElementById('input-cust-city');
+            city.addEventListener('change', function () {
+                if (city.selectedIndex !== 0) {
+                    errorMessage5.style.display = 'none';
+                } else {
+                    errorMessage5.style.display = 'block';
+                }
+            });
+
+            const errorMessage6 = document.getElementById('error-message6');
+            const province = document.getElementById('input-cust-province');
+            province.addEventListener('change', function () {
+                if (province.selectedIndex !== 0) {
+                    errorMessage6.style.display = 'none';
+                } else {
+                    errorMessage6.style.display = 'block';
+                }
+            });
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Report Preview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .report-container {
+            width: 80%;
+            margin: auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #download-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: 2px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="margin-bottom: 0;"><img src ="../images/sample-Logo2.png" alt ="Emma Small Engines Logo" style="height: 100px; background-color: transparent;"></h1>
+    <h1 style="margin: 0;">Security Report</h1>
+
+    <button id="download-btn" onclick="downloadReport()">Download Report</button>
+
+    <div class="report-container">
+        <h3>Report for Login and Logout information.</h3>
+        <p style="margin-bottom: 0px"><strong><small>From: 2023/12/01</small></strong></p>
+        <p style="margin: 0px;"><strong><small>To: 2023/12/08</small></strong></p>
+        <p></p>
+        <p></p>
+        <p style="margin-bottom: 0px;"><strong><small>Prepared By: Emily (Admin)</small></strong></p>
+        <p style="margin: 0px;"><strong><small>Run Date: <span><input id="report-date" 
+            style="border-style: none; background-color: transparent; font-weight: bold;"  disabled></span></small></strong></p>
+       
+
+        <table id="reportTable" border="1" style="width:100%;">
+            <thead>
+                <th>Login Time</th>
+                <th>Logout Time</th>
+                <th>Session Time:</th>
+            </thead>
+            <tbody style="text-align: center;">
+                <tr>
+                    <td colspan="3" style="text-align: left;">
+                        <p style="margin-bottom: 0px;">ID: <span style="font-weight: bold;">001</span></p>
+                        <p style="margin: 0px;">Name: <span style="font-weight: bold;">Emma</span></p>
+                        <p style="margin: 0px;">Title:<span style="font-weight: bold;">Owner</span></p>
+                        <hr/>
+                        <p style="margin: 0px;"><span style="font-weight: bold;">2023-12-01</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>09:00</td>
+                    <td>10:15</td>
+                    <td>1.25 hour</td>
+                </tr>
+                <tr>
+                    <td>10:30</td>
+                    <td>12:00</td>
+                    <td>1.5 hours</td>
+                </tr>
+                <tr >
+                    <td>12:30</td>
+                    <td>15:00</td>
+                    <td>2.5 hours</td>
+                </tr>
+                <tr>
+                    <td>15:15</td>
+                    <td>17:00</td>
+                    <td>1.75 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-weight: bold; text-align: center;"> Total Logged in Time:</td>
+                    <td style="font-weight: bold; text-align: center;">7 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: left;">
+                        <p style="margin: 0px;"><span style="font-weight: bold;">2023-12-02</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>09:00</td>
+                    <td>10:15</td>
+                    <td>1.25 hour</td>
+                </tr>
+                <tr>
+                    <td>10:30</td>
+                    <td>12:00</td>
+                    <td>1.5 hours</td>
+                </tr>
+                <tr >
+                    <td>12:30</td>
+                    <td>15:00</td>
+                    <td>2.5 hours</td>
+                </tr>
+                <tr>
+                    <td>15:15</td>
+                    <td>17:00</td>
+                    <td>1.75 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-weight: bold; text-align: center;"> Total Logged in Time:</td>
+                    <td style="font-weight: bold; text-align: center;">7 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: left;">
+                        <p style="margin: 0px;"><span style="font-weight: bold;">2023-12-03</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>09:00</td>
+                    <td>10:15</td>
+                    <td>1.25 hour</td>
+                </tr>
+                <tr>
+                    <td>10:30</td>
+                    <td>12:00</td>
+                    <td>1.5 hours</td>
+                </tr>
+                <tr >
+                    <td>12:30</td>
+                    <td>15:00</td>
+                    <td>2.5 hours</td>
+                </tr>
+                <tr>
+                    <td>15:15</td>
+                    <td>17:00</td>
+                    <td>1.75 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-weight: bold; text-align: center;"> Total Logged in Time:</td>
+                    <td style="font-weight: bold; text-align: center;">7 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: left;">
+                        <p style="margin: 0px;"><span style="font-weight: bold;">2023-12-04</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>09:00</td>
+                    <td>10:15</td>
+                    <td>1.25 hour</td>
+                </tr>
+                <tr>
+                    <td>10:30</td>
+                    <td>12:00</td>
+                    <td>1.5 hours</td>
+                </tr>
+                <tr >
+                    <td>12:30</td>
+                    <td>15:00</td>
+                    <td>2.5 hours</td>
+                </tr>
+                <tr>
+                    <td>15:15</td>
+                    <td>17:00</td>
+                    <td>1.75 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-weight: bold; text-align: center;"> Total Logged in Time:</td>
+                    <td style="font-weight: bold; text-align: center;">7 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: left;">
+                        <p style="margin: 0px;"><span style="font-weight: bold;">2023-12-07</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>09:00</td>
+                    <td>10:15</td>
+                    <td>1.25 hour</td>
+                </tr>
+                <tr>
+                    <td>10:30</td>
+                    <td>12:00</td>
+                    <td>1.5 hours</td>
+                </tr>
+                <tr >
+                    <td>12:30</td>
+                    <td>15:00</td>
+                    <td>2.5 hours</td>
+                </tr>
+                <tr>
+                    <td>15:15</td>
+                    <td>17:00</td>
+                    <td>1.75 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-weight: bold; text-align: center;"> Total Logged in Time:</td>
+                    <td style="font-weight: bold; text-align: center;">7 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: left;">
+                        <p style="margin: 0px;"><span style="font-weight: bold;">2023-12-08</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>09:00</td>
+                    <td>10:15</td>
+                    <td>1.25 hour</td>
+                </tr>
+                <tr>
+                    <td>10:30</td>
+                    <td>12:00</td>
+                    <td>1.5 hours</td>
+                </tr>
+                <tr >
+                    <td>12:30</td>
+                    <td>15:00</td>
+                    <td>2.5 hours</td>
+                </tr>
+                <tr>
+                    <td>15:15</td>
+                    <td>17:00</td>
+                    <td>1.75 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-weight: bold; text-align: center;"> Total Logged in Time:</td>
+                    <td style="font-weight: bold; text-align: center;">7 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="border: none;">
+                         <hr/>
+                     </td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: left;">
+                        <p style="margin-bottom: 0px;">ID: <span style="font-weight: bold;">0002</span></p>
+                        <p style="margin: 0px;">Name: <span style="font-weight: bold;">Emily</span></p>
+                        <p style="margin: 0px;">Title:<span style="font-weight: bold;">Admin</span></p>
+                        <hr/>
+                        <p style="margin: 0px;"><span style="font-weight: bold;">2023-12-01</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>09:00</td>
+                    <td>10:15</td>
+                    <td>1.25 hour</td>
+                </tr>
+                <tr>
+                    <td>10:30</td>
+                    <td>12:00</td>
+                    <td>1.5 hours</td>
+                </tr>
+                <tr >
+                    <td>12:30</td>
+                    <td>15:00</td>
+                    <td>2.5 hours</td>
+                </tr>
+                <tr>
+                    <td>15:15</td>
+                    <td>17:00</td>
+                    <td>1.75 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-weight: bold; text-align: center;"> Total Logged in Time:</td>
+                    <td style="font-weight: bold; text-align: center;">7 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: left;">
+                        <p style="margin: 0px;"><span style="font-weight: bold;">2023-12-02</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>09:00</td>
+                    <td>10:15</td>
+                    <td>1.25 hour</td>
+                </tr>
+                <tr>
+                    <td>10:30</td>
+                    <td>12:00</td>
+                    <td>1.5 hours</td>
+                </tr>
+                <tr >
+                    <td>12:30</td>
+                    <td>15:00</td>
+                    <td>2.5 hours</td>
+                </tr>
+                <tr>
+                    <td>15:15</td>
+                    <td>17:00</td>
+                    <td>1.75 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-weight: bold; text-align: center;"> Total Logged in Time:</td>
+                    <td style="font-weight: bold; text-align: center;">7 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: left;">
+                        <p style="margin: 0px;"><span style="font-weight: bold;">2023-12-03</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>09:00</td>
+                    <td>10:15</td>
+                    <td>1.25 hour</td>
+                </tr>
+                <tr>
+                    <td>10:30</td>
+                    <td>12:00</td>
+                    <td>1.5 hours</td>
+                </tr>
+                <tr >
+                    <td>12:30</td>
+                    <td>15:00</td>
+                    <td>2.5 hours</td>
+                </tr>
+                <tr>
+                    <td>15:15</td>
+                    <td>17:00</td>
+                    <td>1.75 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-weight: bold; text-align: center;"> Total Logged in Time:</td>
+                    <td style="font-weight: bold; text-align: center;">7 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: left;">
+                        <p style="margin: 0px;"><span style="font-weight: bold;">2023-12-04</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>09:00</td>
+                    <td>10:15</td>
+                    <td>1.25 hour</td>
+                </tr>
+                <tr>
+                    <td>10:30</td>
+                    <td>12:00</td>
+                    <td>1.5 hours</td>
+                </tr>
+                <tr >
+                    <td>12:30</td>
+                    <td>15:00</td>
+                    <td>2.5 hours</td>
+                </tr>
+                <tr>
+                    <td>15:15</td>
+                    <td>17:00</td>
+                    <td>1.75 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-weight: bold; text-align: center;"> Total Logged in Time:</td>
+                    <td style="font-weight: bold; text-align: center;">7 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: left;">
+                        <p style="margin: 0px;"><span style="font-weight: bold;">2023-12-07</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>09:00</td>
+                    <td>10:15</td>
+                    <td>1.25 hour</td>
+                </tr>
+                <tr>
+                    <td>10:30</td>
+                    <td>12:00</td>
+                    <td>1.5 hours</td>
+                </tr>
+                <tr >
+                    <td>12:30</td>
+                    <td>15:00</td>
+                    <td>2.5 hours</td>
+                </tr>
+                <tr>
+                    <td>15:15</td>
+                    <td>17:00</td>
+                    <td>1.75 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-weight: bold; text-align: center;"> Total Logged in Time:</td>
+                    <td style="font-weight: bold; text-align: center;">7 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: left;">
+                        <p style="margin: 0px;"><span style="font-weight: bold;">2023-12-08</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>09:00</td>
+                    <td>10:15</td>
+                    <td>1.25 hour</td>
+                </tr>
+                <tr>
+                    <td>10:30</td>
+                    <td>12:00</td>
+                    <td>1.5 hours</td>
+                </tr>
+                <tr >
+                    <td>12:30</td>
+                    <td>15:00</td>
+                    <td>2.5 hours</td>
+                </tr>
+                <tr>
+                    <td>15:15</td>
+                    <td>17:00</td>
+                    <td>1.75 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-weight: bold; text-align: center;"> Total Logged in Time:</td>
+                    <td style="font-weight: bold; text-align: center;">7 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="border: none;">
+                         <hr/>
+                     </td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: left;">
+                        <p style="margin-bottom: 0px;">ID: <span style="font-weight: bold;">0003</span></p>
+                        <p style="margin: 0px;">Name: <span style="font-weight: bold;">Sarah</span></p>
+                        <p style="margin: 0px;">Title:<span style="font-weight: bold;">Technician</span></p>
+                        <hr/>
+                        <p style="margin: 0px;"><span style="font-weight: bold;">2023-12-01</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>09:00</td>
+                    <td>10:15</td>
+                    <td>1.25 hour</td>
+                </tr>
+                <tr>
+                    <td>10:30</td>
+                    <td>12:00</td>
+                    <td>1.5 hours</td>
+                </tr>
+                <tr >
+                    <td>12:30</td>
+                    <td>15:00</td>
+                    <td>2.5 hours</td>
+                </tr>
+                <tr>
+                    <td>15:15</td>
+                    <td>17:00</td>
+                    <td>1.75 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-weight: bold; text-align: center;"> Total Logged in Time:</td>
+                    <td style="font-weight: bold; text-align: center;">7 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: left;">
+                        <p style="margin: 0px;"><span style="font-weight: bold;">2023-12-02</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>09:00</td>
+                    <td>10:15</td>
+                    <td>1.25 hour</td>
+                </tr>
+                <tr>
+                    <td>10:30</td>
+                    <td>12:00</td>
+                    <td>1.5 hours</td>
+                </tr>
+                <tr >
+                    <td>12:30</td>
+                    <td>15:00</td>
+                    <td>2.5 hours</td>
+                </tr>
+                <tr>
+                    <td>15:15</td>
+                    <td>17:00</td>
+                    <td>1.75 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-weight: bold; text-align: center;"> Total Logged in Time:</td>
+                    <td style="font-weight: bold; text-align: center;">7 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: left;">
+                        <p style="margin: 0px;"><span style="font-weight: bold;">2023-12-03</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>09:00</td>
+                    <td>10:15</td>
+                    <td>1.25 hour</td>
+                </tr>
+                <tr>
+                    <td>10:30</td>
+                    <td>12:00</td>
+                    <td>1.5 hours</td>
+                </tr>
+                <tr >
+                    <td>12:30</td>
+                    <td>15:00</td>
+                    <td>2.5 hours</td>
+                </tr>
+                <tr>
+                    <td>15:15</td>
+                    <td>17:00</td>
+                    <td>1.75 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-weight: bold; text-align: center;"> Total Logged in Time:</td>
+                    <td style="font-weight: bold; text-align: center;">7 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: left;">
+                        <p style="margin: 0px;"><span style="font-weight: bold;">2023-12-05</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>09:00</td>
+                    <td>10:15</td>
+                    <td>1.25 hour</td>
+                </tr>
+                <tr>
+                    <td>10:30</td>
+                    <td>12:00</td>
+                    <td>1.5 hours</td>
+                </tr>
+                <tr >
+                    <td>12:30</td>
+                    <td>15:00</td>
+                    <td>2.5 hours</td>
+                </tr>
+                <tr>
+                    <td>15:15</td>
+                    <td>17:00</td>
+                    <td>1.75 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-weight: bold; text-align: center;"> Total Logged in Time:</td>
+                    <td style="font-weight: bold; text-align: center;">7 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: left;">
+                        <p style="margin: 0px;"><span style="font-weight: bold;">2023-12-07</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>09:00</td>
+                    <td>10:15</td>
+                    <td>1.25 hour</td>
+                </tr>
+                <tr>
+                    <td>10:30</td>
+                    <td>12:00</td>
+                    <td>1.5 hours</td>
+                </tr>
+                <tr >
+                    <td>12:30</td>
+                    <td>15:00</td>
+                    <td>2.5 hours</td>
+                </tr>
+                <tr>
+                    <td>15:15</td>
+                    <td>17:00</td>
+                    <td>1.75 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-weight: bold; text-align: center;"> Total Logged in Time:</td>
+                    <td style="font-weight: bold; text-align: center;">7 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: left;">
+                        <p style="margin: 0px;"><span style="font-weight: bold;">2023-12-08</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>09:00</td>
+                    <td>10:15</td>
+                    <td>1.25 hour</td>
+                </tr>
+                <tr>
+                    <td>10:30</td>
+                    <td>12:00</td>
+                    <td>1.5 hours</td>
+                </tr>
+                <tr >
+                    <td>12:30</td>
+                    <td>15:00</td>
+                    <td>2.5 hours</td>
+                </tr>
+                <tr>
+                    <td>15:15</td>
+                    <td>17:00</td>
+                    <td>1.75 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-weight: bold; text-align: center;"> Total Logged in Time:</td>
+                    <td style="font-weight: bold; text-align: center;">7 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="border: none;">
+                         <hr/>
+                     </td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: left;">
+                        <p style="margin-bottom: 0px;">ID: <span style="font-weight: bold;">004</span></p>
+                        <p style="margin: 0px;">Name: <span style="font-weight: bold;">Wendy</span></p>
+                        <p style="margin: 0px;">Title:<span style="font-weight: bold;">Sales</span></p>
+                        <hr/>
+                        <p style="margin: 0px;"><span style="font-weight: bold;">2023-12-01</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>09:00</td>
+                    <td>09:30</td>
+                    <td>0.5 hour</td>
+                </tr>
+                <tr>
+                    <td>10:30</td>
+                    <td>12:00</td>
+                    <td>1.5 hours</td>
+                </tr>
+                <tr >
+                    <td>14:00</td>
+                    <td>14:30</td>
+                    <td>0.5 hours</td>
+                </tr>
+                <tr>
+                    <td>16:15</td>
+                    <td>17:00</td>
+                    <td>0.75 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-weight: bold; text-align: center;"> Total Logged in Time:</td>
+                    <td style="font-weight: bold; text-align: center;">3.25 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: left;">
+                        <p style="margin: 0px;"><span style="font-weight: bold;">2023-12-02</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>09:00</td>
+                    <td>10:00</td>
+                    <td>1 hour</td>
+                </tr>
+                <tr>
+                    <td>10:30</td>
+                    <td>12:00</td>
+                    <td>1.5 hours</td>
+                </tr>
+                <tr >
+                    <td>15:00</td>
+                    <td>17:00</td>
+                    <td>3 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-weight: bold; text-align: center;"> Total Logged in Time:</td>
+                    <td style="font-weight: bold; text-align: center;">5.5 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: left;">
+                        <p style="margin: 0px;"><span style="font-weight: bold;">2023-12-03</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>09:00</td>
+                    <td>10:15</td>
+                    <td>1.25 hour</td>
+                </tr>
+                <tr>
+                    <td>10:30</td>
+                    <td>12:00</td>
+                    <td>1.5 hours</td>
+                </tr>
+                <tr >
+                    <td>12:30</td>
+                    <td>15:00</td>
+                    <td>2.5 hours</td>
+                </tr>
+                <tr>
+                    <td>15:15</td>
+                    <td>17:00</td>
+                    <td>1.75 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-weight: bold; text-align: center;"> Total Logged in Time:</td>
+                    <td style="font-weight: bold; text-align: center;">7 hours</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="border: none;">
+                        <hr/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <p style="text-align: center;">**** End of the report ***</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <script>
+        function downloadReport() {
+            const table = document.getElementById("reportTable");
+            const rows = table.querySelectorAll("tr");
+            const data = [];
+
+
+            // Loop through rows and cells to get data
+            for (let i = 0; i < rows.length; i++) {
+                const row = rows[i];
+                const cells = row.querySelectorAll("td, th");
+                const rowData = [];
+                for (let j = 0; j < cells.length; j++) {
+                    rowData.push(cells[j].innerText);
+                }
+                data.push(rowData.join(","));
+            }
+
+            // Add report run date and run time
+            const runDate = new Date().toLocaleDateString();
+            const runTime = new Date().toLocaleTimeString();
+            const runBy = "John Snow"
+            const runInfo = [`Report Run By: ${runBy}`, `Report Run Date: ${runDate}`, `Run Time: ${runTime}`];
+            data.push(runInfo.join(","));
+
+            // Create a CSV file content
+            const csvContent = "data:text/csv;charset=utf-8," + data.join("\n");
+
+            // Create a link and trigger download
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "Security Report.csv");
+            document.body.appendChild(link);
+            link.click();
+        }
+
+        const currentDate = new Date().toLocaleDateString('en-CA');
+
+        // Set the current date as the value of the input field
+        document.getElementById('report-date').value = currentDate;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Customer Edit</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../CSS/styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="../JavaScript/main.js" ></script>
+    </head>
+    <body>
+        <header class="head-section">
+            <nav>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-close" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a class="head-nav-link" id ="home-link" href="../index.html">Home</a></li>
+                        <li><a class="head-nav-link" id ="customer-link" href="../Customer/index.html">Customers</a></li>
+                        <li><a class="head-nav-link" id ="request-link" href="../RepairRequest/index.html">Repair Request</a></li>
+                        <li><a class="head-nav-link"  id ="repair-link"href="../Repair/index.html">Repairs</a></li>
+                        <li><a class="head-nav-link" id ="equipment-link"  href="../Equipment/index.html">Equipment</a></li>
+                        <li><a class="head-nav-link"  id ="lookup-link"href="../Lookup/index.html">Lookup Tables</a></li>
+                        <li><a class="head-nav-link" id ="report-link"  href="../Reports/index.html">Reports</a></li>
+                        <li><a class = "logout-btn" alt ="Log out button" style = "margin-top:210px" class = "log-out-button">Log out</a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+    
+            <!-- SCRIPT FOR HAMBURGER MENU -->
+            <script>var navLinks = document.getElementById("navLinks");
+    
+                function showMenu() {
+                    navLinks.style.right = "0";
+                    document.querySelector(".fa-bars").style.display = "none";
+                    document.querySelector(".fa-close").style.display = "block";
+                }
+    
+                function hideMenu() {
+                    navLinks.style.right = "-200px";
+                    document.querySelector(".fa-bars").style.display = "block";
+                    document.querySelector(".fa-close").style.display = "none";
+                }</script>
+                
+        </header>
+        <main class="main-section">
+            <section class="main-heading">
+                <div class="main-heading-title">
+                    <h2 class="main-heading-head">Customer Edit
+                        <span class = "help-btn-group tooltip-help">
+                            <button class ="help-btn">?</button>  
+                            <span class="tooltip-help-text">
+                                <strong>Customer Help:</strong>
+                                <p>1- In the Edit Page you can change any data from the Customer and Update it.  </p><br/>
+                                <p>2- City and Province have their own dropdown list where you can pick the respective city or province.</p><br/>
+                                <p>3- Next to city and province dropdown list there is a "+" that will give you the option to add a city or province in case is not included in the dropdown</p><br/>
+                                <p> 4- With the first table you can edit or add repair request to the customer.</p><br/>
+                                <p> 5- With the second table you can edit or add every euipment the customer has brought to the store.</p><br/>
+                                <i></i>
+                            </span>
+                        </span>
+                    </h2>
+                    <h3 class="main-heading-sub">Jane Doe - 123 Maple Street, Toronto</h3>
+                    <div class ="main-heading-brdcrumbs">
+                        <a class="brdcrumbs-link" href="../index.html">Home</a> | 
+                        <a class="brdcrumbs-link" href="./index.html">Customers</a> |
+                        <a class="brdcrumbs-link" href="./details.html">Details</a> |
+                        <a class="brdcrumbs-link" href="./edit.html">Edit</a>
+                    </div>
+                </div>
+            </section>
+            <div class="main-body">
+                <div class="main-info-item">
+                    <div class="main-info-display" style="width: 35%;">
+                        <div class="info-row">
+                            
+                            <label class ="info-label" for="input-cust-fname">
+                                First Name:
+
+                            </label> 
+                            <div class="info-field tooltip">
+                                <div class ="info-field-error"></div>
+                                <input id="input-cust-fname" class="info-field-input" type="text" value="Jane"> 
+                                <div class="right">
+                                    <h3>Customer First Name</h3>
+                                    <p>Ex: Jane Doe</p>
+                                    <i></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <label class ="info-label" for="input-cust-midname">Middle Name:</label> 
+                            <div class="info-field tooltip">
+                                <div class ="info-field-error"></div>
+                                <input id="input-cust-midname" class="info-field-input" type="text" value="Montes"> 
+                                <div class="right">
+                                    <h3>Customer Middle Name</h3>
+                                    <p>Ex: Montes</p>
+                                    <i></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <label class ="info-label"  for="input-cust-lname">Last Name:</label> 
+                            <div class="info-field tooltip">
+                                <div class ="info-field-error" style="visibility: hidden;"></div>
+                                <input id="input-cust-lname" class="info-field-input" type="text" value="Doe"> 
+                                <div class="right">
+                                    <h3>Customer Last Name</h3>
+                                    <p>Ex: Doe</p>
+                                    <i></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <label class ="info-label" for="input-cust-phone">Phone Number:</label> 
+                            <div class="info-field tooltip">
+                                <div class ="info-field-error" style="visibility: hidden;">Please input a phone in the field</div>
+                                <input id="input-cust-phone" class="info-field-input" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value="1234567890">
+                                <div class="right">
+                                    <h3>Customer Phone Number</h3>
+                                    <p>Ex: 905-0844-0499</p>
+                                    <i></i>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <label class ="info-label" for="input-cust-email">Email:</label> 
+                            <div class="info-field tooltip">
+                                <div class ="info-field-error" style="visibility: hidden;">Please input a email in the field</div>
+                                <input id="input-cust-email" class="info-field-input" type="tel" value="janedoe@gmail.com"> 
+                                <div class="right">
+                                    <h3>Customer Email Address</h3>
+                                    <p>Ex: jdoe@email.com</p>
+                                    <i></i>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <label class ="info-label" for="input-cust-street">Address (Street):</label> 
+                            <div class="info-field tooltip">
+                                <div class ="info-field-error" style="visibility: hidden;">Please input an address in the field</div>
+                                <input id="input-cust-street" class="info-field-input" type="text" value= "123 Maple Street"> 
+                                <div class="right">
+                                    <h3>Customer Address (Street)</h3>
+                                    <p>Ex: 123 Maple Street</p>
+                                    <i></i>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <label class ="info-label"  for="input-cust-city">City:</label> 
+                            <div class="info-field tooltip">
+                                <div class ="info-field-error"></div>
+                                <div class="info-field-group">
+                                    <select class="info-select" id="input-cust-city" style = "width:82%">
+                                        <option value="">Select a City..</option>
+                                        <option value="AB">Welland</option>
+                                        <option value="BC">Pelham</option>
+                                        <option value="MB">Port Colborne</option>
+                                        <option value="NB">WainFleet</option>
+                                        <option value="NL" selected>St. Catharines</option>
+                                        <option value="NS">Niagara Falls</option>
+                                        <option value="NT">Thorold</option>
+                                        <option value="NU">Niagara-On-The-Lake</option>
+                                    </select>
+                                    <div class="right">
+                                        <h3>Customer City</h3>
+                                        <p>Please select a city in the given dropdown or add a city if not present</p>
+                                        <i></i>
+                                    </div> 
+                                    <button style ="width:15%;" class ="btn-edit-dropdowns">+</button>
+                                    
+                                </div>
+                                
+                                
+                               
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <label class ="info-label"  for="input-cust-province">Province:</label> 
+                            <div class="info-field tooltip"> 
+                                <div class ="info-field-error"></div>
+                                <div class="info-field-group">
+                                <select class="info-select" id="input-cust-province" style = "width:82%"> 
+                                    <option value="">Select a Province..</option>
+                                    <option value="AB">Alberta</option>
+                                    <option value="BC">British Columbia</option>
+                                    <option value="MB">Manitoba</option>
+                                    <option value="NB">New Brunswick</option>
+                                    <option value="NL">Newfoundland and Labrador</option>
+                                    <option value="NS">Nova Scotia</option>
+                                    <option value="NT">Northwest Territories</option>
+                                    <option value="NU">Nunavut</option>
+                                    <option value="ON" selected>Ontario</option>
+                                    <option value="PE">Prince Edward Island</option>
+                                    <option value="QC">Quebec</option>
+                                    <option value="SK">Saskatchewan</option>
+                                    <option value="YT">Yukon</option>
+                                </select>
+                                <div class="right">
+                                    <h3>Customer Province</h3>
+                                    <p>Please select a province in the given dropdown or add a province if not present</p>
+                                    <i></i>
+                                </div> 
+                                <button style ="width:15%;" class ="btn-edit-dropdowns">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <label class ="info-label"  for="input-cust-pcode">Postal Code:</label> 
+                            <div class="info-field tooltip">
+                                <div class ="info-field-error" style="visibility: hidden;">Please input a postal code in the field</div>
+                                <input id="input-cust-pcode" class="info-field-input" type="text" value="M5V 2N9"> 
+                                <div class="right">
+                                    <h3>Customer Postal Code</h3>
+                                    <p>Ex: L2M 7P1</p>
+                                    <i></i>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-group">
+                        <div class = "main-info-table" style="width: 100%;">
+                            <div class ="table-header-group">
+                                <h2 class="table-header">Requests</h2> 
+                                <a class = "table-header-link" href = "../RepairRequest/index.html">Go to Repair Request</a>
+                                <a class = "table-header-link" href = "../RepairRequest/edit.html">Edit Repair Request</a>
+                            </div>
+                            <table class="main-table-container">
+                                <tr class="main-info-tablerow">
+                                    <th class = "main-info-tablehead" style ="width:17%"></th>
+                                    <th class="main-info-tablehead" style="width:20%">Request Date</th>
+                                    <th class="main-info-tablehead" style="width:15%">Type</th>
+                                    <th class="main-info-tablehead" style="width:34%">Equipment Name</th>
+                                    <th class="main-info-tablehead" style="width:30%">Status</th>
+                                <!-- </tr>
+                                <tr class="main-info-tablerow">
+                                    <td class = "main-info-tabledata" style="width:17%"><a href="" class = "table-link">Delete (X)</a></td>
+                                    <td class="main-info-tabledata" style="width:20%">2023-11-01</td>
+                                    <td class="main-info-tabledata" style="width:15%">Repair</td>
+                                    <td class="main-info-tabledata" style="width:34%">Excavator EX-2000</td>
+                                    <td class="main-info-tabledata" style="width:30%">Completed</td>
+                                </tr>
+                                <tr class="main-info-tablerow">
+                                    <td class = "main-info-tabledata" style="width:17%"><a href="" class = "table-link">Delete (X)</a></td>
+                                    <td class="main-info-tabledata" style="width:20%">2023-10-25</td>
+                                    <td class="main-info-tabledata" style="width:15%">Sale</td>
+                                    <td class="main-info-tabledata" style="width:34%">Welding Machine WM-500</td>
+                                    <td class="main-info-tabledata" style="width:30%">Pending</td>
+                                </tr>
+                                <tr class="main-info-tablerow">
+                                    <td class = "main-info-tabledata" style="width:17%"><a href="" class = "table-link">Delete (X)</a></td>
+                                    <td class="main-info-tabledata" style="width:20%">2023-09-15</td>
+                                    <td class="main-info-tabledata" style="width:15%">Repair</td>
+                                    <td class="main-info-tabledata" style="width:34%">Power Drill PD-550</td>
+                                    <td class="main-info-tabledata" style="width:30%">Pending</td>
+                                </tr>
+                                <tr class="main-info-tablerow">
+                                    <td class = "main-info-tabledata" style="width:17%"><a href="" class = "table-link">Delete (X)</a></td>
+                                    <td class="main-info-tabledata" style="width:20%">2023-08-05</td>
+                                    <td class="main-info-tabledata" style="width:15%">Sale</td>
+                                    <td class="main-info-tabledata" style="width:34%">Chainsaw CS-700</td>
+                                    <td class="main-info-tabledata" style="width:30%">Completed</td>
+                                </tr> -->
+                            </table>
+                            <div class="main-info-paging">
+                                <button class = "paging-btn">&lt;&lt; Previous</button>
+                                <button class = "paging-btn">1</button>
+                                <button class = "paging-btn">2</button>
+                                <button class = "paging-btn">Next &gt;&gt;</button>
+                            </div>
+                        </div>
+                        <div class = "main-info-table" style="width: 100%;">
+                            <div class ="table-header-group">
+                                <h2 class="table-header">Equipment</h2> 
+                                <a class = "table-header-link" href = "../Equipment/details.html">Go to Equipment</a>
+                                <a class = "table-header-link" href = "../Equipment/edit.html">Edit Equipment</a>
+                            </div>
+                            <table class = "main-table-container" >
+                                <tr class = "main-info-tablerow" >
+                                    <th class = "main-info-tablehead" style ="width:17%">    <button class ="btn-table"><a href="../Equipment/insert.html">New(+)</a></button></th>
+                                    <th class = "main-info-tablehead" style="width:40%">Equipment Name</th>
+                                    <th class = "main-info-tablehead" style="width:30%">Equipment Model</th>
+                                </tr>
+                                <tr class = "main-info-tablerow">
+                                    <td class = "main-info-tabledata" style="width:17%"><a href="" class = "table-link">Delete(X)</a></td>
+                                    <td class = "main-info-tabledata" style="width:40%">Excavator EX-2000</td>
+                                    <td class = "main-info-tabledata"style="width:30%">YP50830</td>
+                                <!-- </tr>
+                                <tr class = "main-info-tablerow">
+                                    <td class = "main-info-tabledata" style="width:17%"><a href="" class = "table-link">Delete(X)</a></td>
+                                    <td class = "main-info-tabledata" style="width:40%">Welding Machine WM-500</td>
+                                    <td class = "main-info-tabledata"style="width:30%">GE15000</td>
+                                </tr>
+                                <tr class = "main-info-tablerow">
+                                    <td class = "main-info-tabledata" style="width:17%"><a href="" class = "table-link">Delete(X)</a></td>
+                                    <td class = "main-info-tabledata" style="width:40%">Power Drill PD-550</td>
+                                    <td class = "main-info-tabledata"style="width:30%">PG798340</td>
+                                </tr>
+                                <tr class = "main-info-tablerow">
+                                    <td class = "main-info-tabledata" style="width:17%"><a href="" class = "table-link">Delete(X)</a></td>
+                                    <td class = "main-info-tabledata" style="width:40%">Chainsaw CS-700</td>
+                                    <td class = "main-info-tabledata"style="width:30%">ZXH95000</td>
+                                </tr> -->
+                            </table>
+                            <div class="main-info-paging">
+                                <button class = "paging-btn">&lt;&lt; Previous</button>
+                                <button class = "paging-btn">1</button>
+                                <button class = "paging-btn">2</button>
+                                <button class = "paging-btn">Next &gt;&gt;</button>
+                            </div>
+                        </div>
+                    </div>
+                        
+                
+                </div>
+                <div class="main-info-buttons">
+                    <a href="./details.html" class="btn-info btn-edit">Update Customer</a>
+                    <a href="./details.html" class="btn-info btn-edit">Cancel</a>
+                </div>
+            </div>
+            <footer class = "foot-main">
+                <p class="foot-text">Application Developed By<br>
+                    &copy;2023 TechLink Software</p>
+                <!--<a href="" class ="foot-text">Sitemap</a>-->
+                <div class ="foot-links">
+                    <a href= ""><img class = "contact-link" src="../images/facebook-icon.png" alt="ESE Facebook page"></a>
+                    <a href= ""> <img class = "contact-link" src="../images/instagram-icon.png" alt="ESE Instragram page"></a>
+                    <a href= ""><img class = "contact-link"  src="../images/twitter-icon.png" alt="ESE Twitter page"></a>
+                    <a href= ""><img class = "contact-link" src="../images/whatsapp-icon.png" alt="ESE Whatsapp contact"></a>
+                </div>
+            </footer>
+        </main>
+    </body>
+</html>

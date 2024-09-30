@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./CSS/styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <script src="./JavaScript/auth.js"></script>
+</head>
+
+<body class="main-auth-page">
+    <div class="main-auth-body">
+        <div class="form-header" style="opacity: 1;">
+            <h1>SIGN IN TO YOUR ACCOUNT</h1>
+        </div>
+        <div class="form-block" style="opacity: 1;">
+            <form id="login-form">
+                <div id="login-email" class="input-group">
+                    <div class="form-error" id = "login-email-error">Placeholder Error</div>
+                    <input id="login-email-input" class="form-input" type="email" name="email" placeholder="Email">
+                    <label class="form-label" for="login-email-input">Email</label>
+                </div>
+                <div id="login-password" class="input-group">
+                    <div class="form-error" id = "login-password-error">Placeholder Error</div>
+                    <input id="login-password-input" class="form-input" type="password" name="password" placeholder="Password">
+                    <label class="form-label" for="login-password-input">Password</label>
+                </div>
+          
+                <button id="login-button-input" type class="form-button" name="submit">Log In</button>
+            </form>
+            <div class="form-navs" style="opacity: 1;">
+                        <span id="login-navs-text">Not registered?</span> 
+                        <a href="register.html"><span id="login-navs-link" class="form-navs-link">Create an account</span></a>
+            </div>
+        </div>
+</body>
+</html>

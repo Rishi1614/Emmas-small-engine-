@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Repair Insert</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="../JavaScript/main.js" ></script>
+</head>
+
+<body>
+    <header class="head-section">
+        <nav>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-close" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a class="head-nav-link" id ="home-link" href="../index.html">Home</a></li>
+                    <li><a class="head-nav-link" id ="customer-link" href="../Customer/index.html">Customers</a></li>
+                    <li><a class="head-nav-link" id ="request-link" href="../RepairRequest/index.html">Repair Request</a></li>
+                    <li><a class="head-nav-link"  id ="repair-link"href="../Repair/index.html">Repairs</a></li>
+                    <li><a class="head-nav-link" id ="equipment-link"  href="../Equipment/index.html">Equipment</a></li>
+                    <li><a class="head-nav-link"  id ="lookup-link"href="../Lookup/index.html">Lookup Tables</a></li>
+                    <li><a class="head-nav-link" id ="report-link"  href="../Reports/index.html">Reports</a></li>
+                    <li><a class = "logout-btn" alt ="Log out button" style = "margin-top:210px" class = "log-out-button">Log out</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        <!-- SCRIPT FOR HAMBURGER MENU -->
+        <script>var navLinks = document.getElementById("navLinks");
+
+            function showMenu() {
+                navLinks.style.right = "0";
+                document.querySelector(".fa-bars").style.display = "none";
+                document.querySelector(".fa-close").style.display = "block";
+            }
+
+            function hideMenu() {
+                navLinks.style.right = "-200px";
+                document.querySelector(".fa-bars").style.display = "block";
+                document.querySelector(".fa-close").style.display = "none";
+            }</script>
+            
+    </header>
+    <main class="main-section">
+        <section class="main-heading">
+            <div class="main-heading-title">
+                <h2 class="main-heading-head">Repair Insert
+                    <span class="help-btn-group tooltip-help">
+                        <button class="help-btn">?</button>
+                        <span class="tooltip-help-text">
+                            <strong>Repair Help:</strong>
+                            <p>1- In the Insert Page you can create a new repair from one of the available requests.
+                            </p><br />
+                            <p>2- You will be able to register more than 1 shift in thE first table, registering the
+                                start and end time
+                                you Take repairing the equipamient, and stop if it's neccesary and registra a New start
+                                time when you continue.</p><br />
+                            <p>2- You will be able to register more than 1 session in the first table, registering the
+                                start and end time
+                                you Take repairing the equipment, and stop if it's neccesary and register a new start
+                                time when you continue.</p><br />
+                            <i></i>
+                        </span>
+                    </span>
+                </h2>
+
+                <div class="main-heading-brdcrumbs">
+                    <a class="brdcrumbs-link" href="../index.html">Home</a> |
+                    <a class="brdcrumbs-link" href="./index.html">Repairs</a> |
+                    <a class="brdcrumbs-link" href="./insert.html">Insert</a>
+                </div>
+            </div>
+        </section>
+        <div class="main-body">
+            <div class="main-info-item">
+                <div class="main-info-display">
+                    <div class="info-row">
+                        <label class="info-label" for="input-equip-name">Equipment Name:</label>
+                        <div class="info-field tooltip">
+                            <div class="info-field-error" id="error-message3"></div>
+                            <input id="input-equip-name" class="info-field-input" type="text" value="Lawnmower LM-2122"
+                                placeholder="Rotary Lawnmower" disabled>
+                            <div class="right">
+                                <h3>Equipment Name:</h3>
+                                <p>Ex: Rotary Lawnmower</p>
+                                <i></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <label class="info-label" for="input-start-date">Start Date:</label>
+                        <div class="info-field tooltip">
+                            <div class="info-field-error"></div>
+                            <input id="input-start-date" class="info-field-input" type="date" value="toLocaleDateString" disabled>
+                            <div class="right">
+                                <h3>Start Date:</h3>
+                                <p>Ex: 02-11-2023</p>
+                                <i></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <label class="info-label" for="input-start-time">Start Time:</label>
+                        <div class="info-field tooltip">
+                            <div class="info-field-error"></div>
+                            <input id="input-start-time" class="info-field-input" type="" value="" disabled>
+                            <div class="right">
+                                <h3>Start Time:</h3>
+                                <p>Ex: 09:00 </p>
+                                <i></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <label class="info-label" for="input-repair-enddate">End Date:</label>
+                        <div class="info-field tooltip">
+                            <div class="info-field-error"></div>
+                            <input id="input-end-date" class="info-field-input" type="date" value="">
+                            <div class="right">
+                                <h3>End Date:</h3>
+                                <p>Ex: 02-11-2023</p>
+                                <i></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <label class="info-label" for="input-end-time">End Time:</label>
+                        <div class="info-field tooltip">
+                            <div class="info-field-error"></div>
+                            <input id="input-end-time" class="info-field-input" type="time" value="">
+                            <div class="right">
+                                <h3>End Time:</h3>
+                                <p>Ex: 14:30 </p>
+                                <i></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <label class="info-label" for="input-equip-notes" style="padding-bottom: 50px;">Repair
+                            Notes:</label>
+                        <div class="info-field tooltip">
+                            <div id="error-message1" class="info-field-error">Required Field</div>
+                            <textarea id="input-equip-notes" class="input-equip-notes" rows="6" cols="60"
+                                placeholder="Repair Details here"></textarea>
+                            <div class="right">
+                                <h3>Repair Notes:</h3>
+                                <p>Ex: Replaced the ignition housing and changed the keys. Blade were in need of
+                                    Sharpening and did that as well.</p>
+                                <i></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <label class="info-label" for="input-repair-warr">Warranty:</label>
+                        <div class="info-field"> <input id="input-repair-warr" class="info-field-chk" type="checkbox"
+                                checked>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <label class="info-label" for="input-repair-tech">Technician:</label>
+                        <div class="info-field tooltip">
+                            <div class="info-field-error"></div>
+                            <div class="info-field-group">
+                                <select class="info-select" id="input-repair-tech" style="width:80%">
+                                    <option>Select a Technician:</option>
+                                    <option selected>Harry Kane</option>
+                                    <option>John Smith</option>
+                                    <option>Maria Rodriguez</option>
+                                    <option>David Lee</option>
+                                </select>
+                                <div class="right">
+                                    <h3>Technician</h3>
+                                    <p>Please select a technician in the given dropdown or add a technician if not
+                                        present</p>
+                                    <i></i>
+                                </div>
+                                <button style="width: 15%;" class="btn-edit-dropdowns">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <label class="info-label" for="input-repair-type">Repair Type:</label>
+                        <div class="info-field tooltip">
+                            <div id="error-message2" class="info-field-error">Required Field
+                            </div>
+                            <div class="info-field-group">
+                                <select class="info-select" id="input-repair-type" style="width:80%">
+                                    <option>Select a Repair Type:</option>
+                                    <option>Diagnosis</option>
+                                    <option>Blade Sharpening</option>
+                                    <option>Spark Plug Replacement</option>
+                                    <option>Carburetor Cleaning</option>
+                                    <option>Oil Change</option>
+                                </select>
+                                <div class="right">
+                                    <h3>Repair Type</h3>
+                                    <p>Please select a repair type in the given dropdown or add a repair type if not
+                                        present</p>
+                                    <i></i>
+                                </div>
+                                <button style="width: 15%;" class="btn-edit-dropdowns">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <label class="info-label" for="input-repair-status">Status:</label>
+
+                        <div class="info-field tooltip">
+                            <div id="error-message4" class="info-field-error">Required Field</div>
+                            <div class="info-field-group">
+                                <select class="info-select" id="input-repair-status" style="width:100%">
+                                    <option>Select a Status of the repair:</option>
+                                    <option>Not Started</option>
+                                    <option>In Progress</option>
+                                    <option>Waiting for parts</option>
+                                    <option>Finished</option>
+                                </select>
+                                <div class="right">
+                                    <h3>Status</h3>
+                                    <p>Please select a status in the given dropdown or add a status if not present</p>
+                                    <i></i>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="table-group">
+                    <div class="main-info-table" style="width:100%">
+                        <div class="table-header-group">
+                            <h2 class="table-header">Request</h2>
+                            <a class="table-header-link" href="../RepairRequest/details.html">Go to Request</a>
+                        </div>
+                        <table class="main-table-container">
+                            <tr class="main-info-tablerow">
+                                <th class="main-info-tablehead" style="width:25%">Request Date</th>
+                                <th class="main-info-tablehead" style="width:60%">Request Reason</th>
+                            </tr>
+                            <tr class="main-info-tablerow">
+                                <td class="main-info-tabledata" style="width:25%">2023-12-11</td>
+                                <td class="main-info-tabledata" style="width:60%">Lawn mower doesn't turn on</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="main-info-table" style="width:100%">
+                        <div class="table-header-group">
+                            <h2 class="table-header">Session Details</h2>
+                        </div>
+                        <table class="main-table-container">
+                            <tr class="main-info-tablerow">
+                                <th class="main-info-tablehead" style="width:20%">Start Date</th>
+                                <th class="main-info-tablehead" style="width:20%">Start Time</th>
+                                <th class="main-info-tablehead" style="width:20%">End Date</th>
+                                <th class="main-info-tablehead" style="width:20%">End Time</th>
+                                <th class="main-info-tablehead" style="width:20%">Total Time</th>
+                            </tr>
+                            <tr class="main-info-tablerow">
+                                <td class="main-info-tabledata" style="width:20%"><input id="input-start-date1"
+                                        class="info-field-input" type="" value=""></td>
+                                <td class="main-info-tabledata" style="width:20%"><input id="input-start-time1"
+                                        class="info-field-input" type="" value=""></td>
+                                <td class="main-info-tabledata" style="width:20%">-</td>
+                                <td class="main-info-tabledata" style="width:20%">-</td>
+                                <td class="main-info-tabledata" style="width:20%">-</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="main-info-table" style="width:100%">
+                        <h2 class="table-header">Parts</h2>
+                        <table class="main-table-container">
+                            <tr class="main-info-tablerow">
+                                <th class="main-info-tablehead" style="width:17%">
+                                    <div class="tooltip">
+                                        <button class="btn-table">New(+)</button>
+                                        <div class="right">
+                                            <p><strong>Add new parts</strong></p>
+                                            <p>Select new parts to add to the repair from the parts index</p>
+                                            <i></i>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th class="main-info-tablehead" style="width:50%">Parts Name</th>
+                                <th class="main-info-tablehead" style="width:50%">Parts Cost</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="main-info-buttons">
+                <a href="./details.html" class="btn-info btn-edit">Save</a>
+                <a href="./index.html" class="btn-info btn-edit">Cancel</a>
+            </div>
+        </div>
+        <footer class="foot-main">
+            <p class="foot-text">Application Developed By<br>
+                &copy;2023 TechLink Software</p>
+            <!--<a href="" class ="foot-text">Sitemap</a>-->
+            <div class="foot-links">
+                <a href=""><img class="contact-link" src="../images/facebook-icon.png" alt="ESE Facebook page"></a>
+                <a href=""> <img class="contact-link" src="../images/instagram-icon.png" alt="ESE Instragram page"></a>
+                <a href=""><img class="contact-link" src="../images/twitter-icon.png" alt="ESE Twitter page"></a>
+                <a href=""><img class="contact-link" src="../images/whatsapp-icon.png" alt="ESE Whatsapp contact"></a>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        const currentDate = new Date().toLocaleDateString('en-CA');
+        const options = { hour: '2-digit', minute: '2-digit', hour12: true };
+        const currentTime = new Date().toLocaleTimeString('en-US', options);
+
+        // Set the current date as the value of the input field
+        document.getElementById('input-start-date').value = currentDate;
+        const options1 = { year: '2-digit', month: 'short', day: '2-digit' };
+        const currentDate1 = new Date().toLocaleDateString('en-US', options1);
+        document.getElementById('input-start-date1').value = currentDate1;
+        document.getElementById('input-start-time').value = currentTime;
+        document.getElementById('input-start-time1').value = currentTime;
+
+
+        const errorMessage = document.getElementById('error-message1');
+        const textarea = document.getElementById('input-equip-notes');
+
+        // Add an event listener to the textarea for the 'input' event
+        textarea.addEventListener('input', function () {
+            // Check if the textarea has text
+            if (textarea.value.trim() !== '') {
+                // If it has text, hide the error message
+                errorMessage.style.display = 'none';
+            } else {
+                // If it's empty, show the error message
+                errorMessage.style.display = 'block';
+            }
+        });
+
+
+        const errorMessage2 = document.getElementById('error-message2');
+        const repairTypeSelect = document.getElementById('input-repair-type');
+
+        // Add an event listener to the select element for the 'change' event
+        repairTypeSelect.addEventListener('change', function () {
+            // Check if the selected option is not the first option
+            if (repairTypeSelect.selectedIndex !== 0) {
+                // If it's not the first option, hide the error message
+                errorMessage2.style.display = 'none';
+            } else {
+                // If it's the first option, show the error message
+                errorMessage2.style.display = 'block';
+            }
+        });
+
+        const errorMessage4 = document.getElementById('error-message4');
+        const repairStatusSelect = document.getElementById('input-repair-status');
+
+        // Add an event listener to the select element for the 'change' event
+        repairStatusSelect.addEventListener('change', function () {
+            // Check if the selected option is not the first option
+            if (repairStatusSelect.selectedIndex !== 0) {
+                // If it's not the first option, hide the error message
+                errorMessage4.style.display = 'none';
+            } else {
+                // If it's the first option, show the error message
+                errorMessage4.style.display = 'block';
+            }
+        });
+
+    </script>
+</body>
+
+</html>

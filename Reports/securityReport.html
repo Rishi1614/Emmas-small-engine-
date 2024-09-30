@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Security Report</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="../JavaScript/main.js" ></script>
+</head>
+
+<body>
+    <header class="head-section">
+        <nav>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-close" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a class="head-nav-link" id ="home-link" href="../index.html">Home</a></li>
+                    <li><a class="head-nav-link" id ="customer-link" href="../Customer/index.html">Customers</a></li>
+                    <li><a class="head-nav-link" id ="request-link" href="../RepairRequest/index.html">Repair Request</a></li>
+                    <li><a class="head-nav-link"  id ="repair-link"href="../Repair/index.html">Repairs</a></li>
+                    <li><a class="head-nav-link" id ="equipment-link"  href="../Equipment/index.html">Equipment</a></li>
+                    <li><a class="head-nav-link"  id ="lookup-link"href="../Lookup/index.html">Lookup Tables</a></li>
+                    <li><a class="head-nav-link" id ="report-link"  href="../Reports/index.html">Reports</a></li>
+                    <li><a class = "logout-btn" alt ="Log out button" style = "margin-top:210px" class = "log-out-button">Log out</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        <!-- SCRIPT FOR HAMBURGER MENU -->
+        <script>var navLinks = document.getElementById("navLinks");
+
+            function showMenu() {
+                navLinks.style.right = "0";
+                document.querySelector(".fa-bars").style.display = "none";
+                document.querySelector(".fa-close").style.display = "block";
+            }
+
+            function hideMenu() {
+                navLinks.style.right = "-200px";
+                document.querySelector(".fa-bars").style.display = "block";
+                document.querySelector(".fa-close").style.display = "none";
+            }</script>
+            
+    </header>
+    <form>
+        <main class="main-section">
+            <section class="main-heading">
+                <div class="main-heading-title">
+                    <h2 class="main-heading-head">Security Report
+                        <span class = "help-btn-group tooltip-help">
+                            <button class ="help-btn">?</button>  
+                            <span class="tooltip-help-text">
+                                <strong>Security Report Help:</strong>
+                                <p> 1- In this page you can create an security report, fill the form with all the data you need.
+                                </p><br/>
+                                <p>2- Click on "Preview report" button and you will go to the preview page, where you will be able to see the report and download 
+                                    a copy of it.
+                                </p><br/>
+                                <p>3- If you made a mistake and want to start again click on "Clear" button.
+                                </p>
+                            </span>
+                        </span>
+                    </h2>
+                    <div class="main-heading-brdcrumbs">
+                        <a class="brdcrumbs-link" href="../index.html">Home</a> |
+                        <a class="brdcrumbs-link" href="../Reports/index.html">Reports</a> |
+                        <a class="brdcrumbs-link" href="../Reports/securityReport.html">Security Report</a>
+                    </div>
+                </div>
+            </section>
+            <div class="main-body">
+                <div class="main-info-item">
+                    <div class="main-info-display" style="width: 35%;">
+                        <div class="info-row">
+                            <label class="info-label" for="input-run-date">Report Run Date:
+                            </label>
+                            <div class="info-field tooltip">
+                                <div class="info-field-error" hidden>Report Run Date is required.</div>
+                                <input id="input-run-date" class="info-field-input" type="date" value="" disabled>
+                                <div class="right">
+                                    <h3>Report Run Date</h3>
+                                    <p>Ex: 2023-11-15</p>
+                                    <i></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <label class="info-label" for="input-report-run-by">Report Run By:</label>
+                            <div class="info-field tooltip">
+                                <div class="info-field-error" hidden>Employee needs to be selected.</div>
+                                <div class="info-field-group">
+                                    <select class="info-select" id="input-report-run-by" style="width:100%">
+                                        <option value="">Select a Employee</option>
+                                        <option>Emma</option>
+                                        <option selected>Emily</option>
+                                    </select>
+                                    <div class="right">
+                                        <h3>Report Run by</h3>
+                                        <p>Please select who is running this report.</p>
+                                        <i></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <label class="info-label" for="input-login-date">Login Date:
+                            </label>
+                            <div class="info-field tooltip">
+                                <div class="info-field-error" hidden hidden>Login Date is required.</div>
+                                <input id="input-login-date" class="info-field-input" type="date" value="2023-12-01">
+                                <div class="right">
+                                    <h3>Login Date</h3>
+                                    <p>Ex: 2023-11-01</p>
+                                    <i></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <label class="info-label" for="input-logout-date">Logout Date:
+                            </label>
+                            <div class="info-field tooltip">
+                                <div class="info-field-error" hidden>Logout Date is required.</div>
+                                <input id="input-logout-date" class="info-field-input" type="date" value="2023-11-30">
+                                <div class="right">
+                                    <h3>Logout Date</h3>
+                                    <p>Ex: 2023-11-01</p>
+                                    <i></i>
+                                </div>
+                            </div>
+                        </div>                        
+                        <div class="info-row">
+                            <label class="info-label" for="input-emp-report">Employee:</label>
+                            <div class="info-field tooltip">
+                                <div class="info-field-error" hidden>Employee needs to be selected.</div>
+                                <div class="info-field-group">
+                                    <select class="info-select" id="input-emp-report" style="width:100%">
+                                        <option selected>All Employee</option>
+                                        <option>Admin Employee</option>
+                                        <option>Technician 1</option>
+                                        <option>Technician 2</option>
+                                        <option>Sales 1</option>
+                                        <option>Sales 2</option>
+                                        <option>Parts 1</option>
+                                    </select>
+                                    <div class="right">
+                                        <h3>Employee</h3>
+                                        <p>Report is generated based on employee selected.</p>
+                                        <i></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-info-buttons">
+                    <a href="./securityReportPreview.html" class="btn-info btn-edit" target="_blank">Preview Report</a>
+                    <a href="./index.html" class="btn-info btn-edit">Back</a>
+                </div>
+            </div>
+    </form>
+    <footer class="foot-main" style="position:absolute;">
+        <p class="foot-text">Application Developed By<br>
+            &copy;2023 TechLink Software</p>
+        <!--<a href="" class ="foot-text">Sitemap</a>-->
+        <div class="foot-links">
+            <a href=""><img class="contact-link" src="../images/facebook-icon.png" alt="ESE Facebook page"></a>
+            <a href=""> <img class="contact-link" src="../images/instagram-icon.png" alt="ESE Instragram page"></a>
+            <a href=""><img class="contact-link" src="../images/twitter-icon.png" alt="ESE Twitter page"></a>
+            <a href=""><img class="contact-link" src="../images/whatsapp-icon.png" alt="ESE Whatsapp contact"></a>
+        </div>
+    </footer>
+    </main>
+    <script>
+        const currentDate = new Date().toLocaleDateString('en-CA');
+        document.getElementById('input-run-date').value = currentDate;
+
+        const reportEndDate = new Date();
+        reportEndDate.setDate(reportEndDate.getDate()-1);
+        const formattedDate = reportEndDate.toLocaleDateString('en-CA');
+        document.getElementById('input-logout-date').value = formattedDate;
+
+    </script>
+</body>
+
+</html>

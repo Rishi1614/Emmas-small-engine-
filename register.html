@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Register</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./CSS/styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <script src="./JavaScript/auth.js"></script>
+</head>
+
+<body class="main-auth-page">
+    <div class="main-auth-body">
+        <div class="form-header" style="opacity: 1;">
+            <h1>CREATE AN ACCOUNT</h1>
+         </div>
+         <div class="form-block" style="opacity: 1;">
+            <form id="register-form">
+               <div id="register-username" class="input-group">
+                  <div class="form-error">Placeholder Error</div>
+                  <input id="register-username-input" class="form-input" type="text" name="username" placeholder="Username"><label class="form-label" for="register-username-input">Username</label>
+               </div>
+               <div id="register-email" class="input-group">
+                  <div class="form-error">Placeholder Error</div>
+                  <input id="register-email-input" class="form-input" type="email" name="email" placeholder="Email"><label class="form-label" for="register-email-input">Email</label>
+               </div>
+               <div id="register-password" class="input-group">
+                  <div class="form-error">Placeholder Error</div>
+                  <input id="register-password-input" class="form-input" type="password" name="password" placeholder="Password"><label class="form-label" for="register-password-input">Password</label>
+               </div>
+               <div id="register-confirm" class="input-group">
+                  <div class="form-error">Placeholder Error</div>
+                  <input id="register-confirm-input" class="form-input" type="password" name="confirm" placeholder="Confirm"><label class="form-label" for="register-confirm-input">Confirm</label>
+               </div>
+               <button id="register-button-input" class="form-button" name="submit">Sign Up</button>
+            </form>
+         </div>
+         <div class="form-navs" style="opacity: 1;"><span id="register-navs-text">Already have an account?</span> 
+            <a href ="login.html"> <span id="register-navs-link" class="form-navs-link">Log in</span></a>
+        </div>
+        </div>
+</body>
+</html>

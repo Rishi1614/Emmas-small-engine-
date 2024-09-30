@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Inventory Details</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/CSS/styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="/JavaScript/main.js" ></script>
+    </head>
+    <body>
+        <header class="head-section">
+            <nav>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-close" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a class="head-nav-link" id ="home-link" href="/index.html">Home</a></li>
+                        <li><a class="head-nav-link" id ="customer-link" href="/Customer/index.html">Customers</a></li>
+                        <li><a class="head-nav-link" id ="request-link" href="/RepairRequest/index.html">Repair Request</a></li>
+                        <li><a class="head-nav-link"  id ="repair-link"href="/Repair/index.html">Repairs</a></li>
+                        <li><a class="head-nav-link" id ="equipment-link"  href="/Equipment/index.html">Equipment</a></li>
+                        <li><a class="head-nav-link"  id ="lookup-link" href="../index.html">Lookup Tables</a></li>
+                        <li><a class="head-nav-link" id ="report-link"  href="/Reports/index.html">Reports</a></li>
+                        <li><a class = "logout-btn" alt ="Log out button" style = "margin-top:210px" class = "log-out-button">Log out</a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+    
+            <!-- SCRIPT FOR HAMBURGER MENU -->
+            <script>var navLinks = document.getElementById("navLinks");
+    
+                function showMenu() {
+                    navLinks.style.right = "0";
+                    document.querySelector(".fa-bars").style.display = "none";
+                    document.querySelector(".fa-close").style.display = "block";
+                }
+    
+                function hideMenu() {
+                    navLinks.style.right = "-200px";
+                    document.querySelector(".fa-bars").style.display = "block";
+                    document.querySelector(".fa-close").style.display = "none";
+                }</script>
+                
+        </header>
+        <main class = "main-section">
+            <section class = "main-heading">
+                <div class = "main-heading-title">
+                    <h2 class = "main-heading-head">Electronic Ignition Hub</h2>
+                    <h3 class = "main-heading-sub">ID#0014</h3>
+                      <div class ="main-heading-brdcrumbs">
+                        <a class="brdcrumbs-link" href="/index.html">Home</a> | 
+                        <a class="brdcrumbs-link" href="/Lookup/index.html">Lookups</a> |
+                        <a class="brdcrumbs-link" href="./index.html">Inventory</a> |
+                        <a class="brdcrumbs-link" href="./details.html">Details</a>
+                    </div>
+                    
+                </div>
+            </section>
+            <div class = "main-body">
+            
+                <div class = "main-info-item">
+                    <div class = "main-info-display">
+                        <div class = "info-row">
+                            <div class ="info-label">Inventory ID:</div> 
+                            <div class = "info-field">0014</div>
+                        </div>
+                        <div class = "info-row">
+                            <div class ="info-label">Inventory Name:</div> 
+                            <div class = "info-field">Electronic Ignition Hub</div>
+                        </div>
+                        <div class = "info-row">
+                            <div class ="info-label">Inventory Quantity:</div> 
+                            <div class = "info-field">15</div>
+                        </div>
+                        <div class = "info-row">
+                            <div class ="info-label">Inventory Per Cost:</div> 
+                            <div class = "info-field">$170</div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class = "main-info-buttons">
+                    <a class = "btn-info btn-edit" href = "./index.html">Back</a>
+                    <a class = "btn-info btn-edit" href = "./edit.html">Edit Inventory</a>
+                    <button onclick = "confirm('Are you sure you want to delete this Type?');" class = "btn-info btn-delete">Delete Inventory</button>
+                </div>
+            </div>
+            <footer class="foot-main" style="position:absolute;">
+                <p class="foot-text">Application Developed By<br>
+                    &copy;2023 TechLink Software</p>
+                <!--<a href="" class ="foot-text">Sitemap</a>-->
+                <div class ="foot-links">
+                    <a href= ""><img class = "contact-link" src="/images/facebook-icon.png" alt="ESE Facebook page"></a>
+                    <a href= ""> <img class = "contact-link" src="/images/instagram-icon.png" alt="ESE Instragram page"></a>
+                    <a href= ""><img class = "contact-link"  src="/images/twitter-icon.png" alt="ESE Twitter page"></a>
+                    <a href= ""><img class = "contact-link" src="/images/whatsapp-icon.png" alt="ESE Whatsapp contact"></a>
+                </div>
+            </footer>
+        </main>
+        
+    </body>
+</html>

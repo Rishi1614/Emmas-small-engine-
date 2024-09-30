@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Repair Request Details</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="../JavaScript/main.js"></script>
+</head>
+
+<body>
+    <header class="head-section">
+        <nav>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-close" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a class="head-nav-link" id ="home-link" href="../index.html">Home</a></li>
+                    <li><a class="head-nav-link" id ="customer-link" href="../Customer/index.html">Customers</a></li>
+                    <li><a class="head-nav-link" id ="request-link" href="../RepairRequest/index.html">Repair Request</a></li>
+                    <li><a class="head-nav-link"  id ="repair-link"href="../Repair/index.html">Repairs</a></li>
+                    <li><a class="head-nav-link" id ="equipment-link"  href="../Equipment/index.html">Equipment</a></li>
+                    <li><a class="head-nav-link"  id ="lookup-link"href="../Lookup/index.html">Lookup Tables</a></li>
+                    <li><a class="head-nav-link" id ="report-link"  href="../Reports/index.html">Reports</a></li>
+                    <li><a class = "logout-btn" alt ="Log out button" style = "margin-top:210px" class = "log-out-button">Log out</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        <!-- SCRIPT FOR HAMBURGER MENU -->
+        <script>var navLinks = document.getElementById("navLinks");
+
+            function showMenu() {
+                navLinks.style.right = "0";
+                document.querySelector(".fa-bars").style.display = "none";
+                document.querySelector(".fa-close").style.display = "block";
+            }
+
+            function hideMenu() {
+                navLinks.style.right = "-200px";
+                document.querySelector(".fa-bars").style.display = "block";
+                document.querySelector(".fa-close").style.display = "none";
+            }</script>
+            
+    </header>
+    <main class="main-section">
+        <section class="main-heading">
+            <div class="main-heading-title">
+                <h2 class="main-heading-head">Lawnmower Repair Request
+                    <span class="help-btn-group tooltip-help">
+                        <button class="help-btn">?</button>
+                        <span class="tooltip-help-text">
+                            <strong>Repair Request Help:</strong>
+                            <p> 1- In the Repair Request all of their details you can see al the information about the
+                                request and a link under the details for the technicians to create a repair if it's not
+                                staryted yet. </p><br />
+                            <p> 2- The first table is the repair table where you will be able to go to the details of
+                                the repair if it has been created already.</p><br />
+                            <p> 3- The second table is the customer table, you can see some of the information about the
+                                customer and if it's needed you can go to the customer page using the "Go to Customer"
+                                Link.</p><br />
+                            <p> 4- The third table is the equipment table, you can see some of the information about the
+                                equipment and if it's needed you can go to the equipment page using the "Go to
+                                Equipment" Link.</p>
+                            <i></i>
+                        </span>
+                    </span>
+                </h2>
+                <h3 class="main-heading-sub">ID#0201 </h3>
+                <div class="main-heading-brdcrumbs">
+                    <a class="brdcrumbs-link" href="../index.html">Home</a> |
+                    <a class="brdcrumbs-link" href="./index.html">Repair Request</a> |
+                    <a class="brdcrumbs-link" href="./details.html">Details</a>
+                </div>
+            </div>
+        </section>
+        <div class="main-body">
+
+            <div class="main-info-item">
+                <div class="main-info-display">
+                    <div class="info-row">
+                        <div class="info-label">Request Date:</div>
+                        <div class="info-field" id="dateField"></div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Reason:</div>
+                        <div class="info-field">Lawnmower does not turn ON. Battery and Gas checked by the owner.</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label">Status:</div>
+                        <div class="info-field">Not Started</div>
+                    </div>
+                    <div class="info-row">
+                        <a href="../Repair/insert.html" style="color:blueviolet; text-decoration: none;"
+                            onmouseover="this.style.textDecoration='underline'"
+                            onmouseout="this.style.textDecoration='none'">Click here to start the Repair. </a>
+                    </div>
+                </div>
+                <div class="table-group">
+                    <div class="main-info-table" style="width:100%">
+                        <div class="table-header-group">
+                            <h2 class="table-header">Repair
+                            </h2>
+                            <a class="table-header-link" href="../Repair/details.html">Go to Repair</a>
+                        </div>
+                        <table class="main-table-container">
+                            <tr class="main-info-tablerow">
+                                <th class="main-info-tablehead" style="width:25%">Repair Start</th>
+                                <th class="main-info-tablehead" style="width:20%">Repair Status</th>
+                            </tr>
+                            <tr class="main-info-tablerow">
+                                <td class="main-info-tabledata" style="width:25%">2023-12-11</td>
+                                <td class="main-info-tabledata" style="width:20%">Not Started</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="main-info-table" style="width:100%">
+                        <div class="table-header-group">
+                            <h2 class="table-header">Customer</h2>
+                            <a class="table-header-link" href="../Customer/details.html">Go to Customer</a>
+                        </div>
+                        <table class="main-table-container">
+                            <tr class="main-info-tablerow">
+                                <th class="main-info-tablehead" style="width:19%">Customer Name</th>
+                                <th class="main-info-tablehead" style="width:19%">Customer Email</th>
+                                <th class="main-info-tablehead" style="width:19%">Customer Phone</th>
+                            </tr>
+                            <tr class="main-info-tablerow">
+                                <td class="main-info-tabledata" style="width:20%">Jane Doe</td>
+                                <td class="main-info-tabledata" style="width:20%">jdoe@email.com</td>
+                                <td class="main-info-tabledata" style="width:20%">(123)456-7890</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="main-info-table" style="width:100%">
+                        <div class="table-header-group">
+                            <h2 class="table-header">Equipment</h2>
+                            <a class="table-header-link" href="../Equipment/details.html">Go to Equipment</a>
+                        </div>
+                        <table class="main-table-container">
+                            <tr class="main-info-tablerow">
+                                <th class="main-info-tablehead" style="width:25%">Equipment Name</th>
+                                <th class="main-info-tablehead" style="width:30%">Equipment Model</th>
+                            </tr>
+                            <tr class="main-info-tablerow">
+                                <td class="main-info-tabledata" style="width:25%">Lawnmower LM-2122</td>
+                                <td class="main-info-tabledata" style="width:20%">YP50830</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="main-info-buttons">
+                <a class="btn-info btn-edit" href="./index.html">Back</a>
+                <a class="btn-info btn-edit" href="./edit.html">Edit Repair Request</a>
+                <button onclick="confirm('Are you sure you want to delete this Repair?');"
+                    class="btn-info btn-delete">Delete Repair Request</button>
+            </div>
+        </div>
+        <footer class="foot-main">
+            <p class="foot-text">Application Developed By<br>
+                &copy;2023 TechLink Software</p>
+            <!--<a href="" class ="foot-text">Sitemap</a>-->
+            <div class="foot-links">
+                <a href=""><img class="contact-link" src="../images/facebook-icon.png" alt="ESE Facebook page"></a>
+                <a href=""> <img class="contact-link" src="../images/instagram-icon.png" alt="ESE Instragram page"></a>
+                <a href=""><img class="contact-link" src="../images/twitter-icon.png" alt="ESE Twitter page"></a>
+                <a href=""><img class="contact-link" src="../images/whatsapp-icon.png" alt="ESE Whatsapp contact"></a>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        var currentDate = new Date();
+
+        // Extract local date components
+        var year = currentDate.getFullYear();
+        var month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+        var day = currentDate.getDate().toString().padStart(2, '0');
+
+        // Format the date as YYYY-MM-DD
+        var formattedDate = year + '-' + month + '-' + day;
+
+        // Set the formatted date to the div element
+        document.getElementById("dateField").innerHTML = formattedDate;
+    </script>
+</body>
+
+</html>

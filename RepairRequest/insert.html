@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Repair Request Insert</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <script src="../JavaScript/main.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        .info-field-error {
+            display: block; /* Set to 'none' initially to hide the div */
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="head-section">
+        <nav>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-close" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a class="head-nav-link" id ="home-link" href="../index.html">Home</a></li>
+                    <li><a class="head-nav-link" id ="customer-link" href="../Customer/index.html">Customers</a></li>
+                    <li><a class="head-nav-link" id ="request-link" href="../RepairRequest/index.html">Repair Request</a></li>
+                    <li><a class="head-nav-link"  id ="repair-link"href="../Repair/index.html">Repairs</a></li>
+                    <li><a class="head-nav-link" id ="equipment-link"  href="../Equipment/index.html">Equipment</a></li>
+                    <li><a class="head-nav-link"  id ="lookup-link"href="../Lookup/index.html">Lookup Tables</a></li>
+                    <li><a class="head-nav-link" id ="report-link"  href="../Reports/index.html">Reports</a></li>
+                    <li><a class = "logout-btn" alt ="Log out button" style = "margin-top:210px" class = "log-out-button">Log out</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        <!-- SCRIPT FOR HAMBURGER MENU -->
+        <script>var navLinks = document.getElementById("navLinks");
+
+            function showMenu() {
+                navLinks.style.right = "0";
+                document.querySelector(".fa-bars").style.display = "none";
+                document.querySelector(".fa-close").style.display = "block";
+            }
+
+            function hideMenu() {
+                navLinks.style.right = "-200px";
+                document.querySelector(".fa-bars").style.display = "block";
+                document.querySelector(".fa-close").style.display = "none";
+            }</script>
+            
+    </header>
+    <main class="main-section">
+        <section class="main-heading">
+            <div class="main-heading-title">
+                <h2 class="main-heading-head">Repair Request Insert
+                    <span class="help-btn-group tooltip-help">
+                        <button class="help-btn">?</button>
+                        <span class="tooltip-help-text">
+                            <strong>Reapir Request Help:</strong>
+                            <p> 1- In the Repair Request Page you can see the ID,Date, Reason, and status from the
+                                repairs requests </p><br />
+                            <p>2- You can click on any repair request box and you will see all of their details and a
+                                link under the details for the technicians to create a repair if it's not staryted yet.
+                            </p><br />
+                            <p> 3- The first table is the repair table where you will be able to go to the details of
+                                the repair if it has been created already.</p><br />
+                            <p> 4- The second table is the customer table, you can see some of the information about the
+                                customer and if it's needed you can go to the customer page using the "Go to Customer"
+                                Link.</p>
+                            <i></i>
+                        </span>
+                    </span>
+                </h2>
+                <div class="main-heading-brdcrumbs">
+                    <a class="brdcrumbs-link" href="../index.html">Home</a> |
+                    <a class="brdcrumbs-link" href="./index.html">Repairs Request</a> |
+                    <a class="brdcrumbs-link" href="./insert.html">Insert</a>
+                </div>
+            </div>
+        </section>
+        <div class="main-body">
+            <div class="main-info-item">
+                <div class="main-info-display">
+                    <div class="info-row">
+                        <label class="info-label" for="input-repair-date">Request Date:</label>
+                        <div class="info-field tooltip">
+                            <input id = "input-start-date" class = "info-field-input" type = "date" value="" disabled> 
+                            <div class="right">
+                                <h3>Request Date</h3>
+                                <p>Ex: 01-11-2023</p>
+                                <i></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <label class="info-label" for="input-repair-reason"
+                            style="padding-bottom: 50px;">Reason:</label>
+                        <div class="info-field tooltip">
+                            <div class="info-field-error">Required Field</div>
+                            <textarea id="input-repair-reason" class="input-equip-notes" rows="6" cols="60"
+                                placeholder="Customer explanation of the issue"></textarea>
+                            <div class="right">
+                                <h3>Reason:</h3>
+                                <p>Ex: Lawn mower Doesn't Turn On....</p>
+                                <i></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <label class="info-label" for="input-repair-status">Status:</label>
+                        <div class="info-field tooltip">
+                            <input id="input-repair-status" class="info-field-input" type="text" value="Not Started"
+                                disabled>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="table-group">
+
+                    <div class="main-info-table" style="width:100%">
+                        <div class="table-header-group">
+                            <h2 class="table-header">Customer</h2>
+                        </div>
+                        <table class="main-table-container">
+                            <tr class="main-info-tablerow">
+
+                                <th class="main-info-tablehead" style="width:19%">Customer Name</th>
+                                <th class="main-info-tablehead" style="width:19%">Customer Email</th>
+                                <th class="main-info-tablehead" style="width:19%">Customer Phone</th>
+                            </tr>
+                            <tr class="main-info-tablerow">
+                                <td class="main-info-tabledata" style="width:30%">Jane M. Doe</td>
+                                <td class="main-info-tabledata" style="width:40%">janedoe@gmail.com</td>
+                                <td class="main-info-tabledata" style="width:30%">(123)456-7890</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="main-info-table" style="width:100%">
+                        <div class="table-header-group">
+                            <h2 class="table-header">Equipment</h2>
+                        </div>
+                        <table class="main-table-container">
+                            <tr class="main-info-tablerow">
+                                <th class="main-info-tablehead" style="width:25%">Equipment Name</th>
+                                <th class="main-info-tablehead" style="width:30%">Equipment Model</th>
+                            </tr>
+                            <tr class="main-info-tablerow">
+                                <td class="main-info-tabledata" style="width:30%">Lawnmower -LM2122</td>
+                                <td class="main-info-tabledata" style="width:40%">YP50830</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="main-info-buttons">
+                <a href="../Customer/index.html" class="btn-info btn-edit">Save</a>
+                <a href="../Customer/edit.html" class="btn-info btn-edit">Cancel</a>
+            </div>
+        </div>
+        <footer class="foot-main">
+            <p class="foot-text">Application Developed By<br>
+                &copy;2023 TechLink Software</p>
+            <!--<a href="" class ="foot-text">Sitemap</a>-->
+            <div class="foot-links">
+                <a href=""><img class="contact-link" src="../images/facebook-icon.png" alt="ESE Facebook page"></a>
+                <a href=""> <img class="contact-link" src="../images/instagram-icon.png" alt="ESE Instragram page"></a>
+                <a href=""><img class="contact-link" src="../images/twitter-icon.png" alt="ESE Twitter page"></a>
+                <a href=""><img class="contact-link" src="../images/whatsapp-icon.png" alt="ESE Whatsapp contact"></a>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // Get the current date in the user's local timezone
+        const currentDate = new Date().toLocaleDateString('en-CA'); // Adjust 'en-CA' based on your preferred locale
+
+        // Set the current date as the value of the input field
+        document.getElementById('input-start-date').value = currentDate;
+
+        $(document).ready(function () {
+        $('#input-repair-reason').on('input', function () {
+            // Check if the textarea has some text
+            if ($(this).val().trim() !== '') {
+                // If yes, hide the error message
+                $('.info-field-error').hide();
+            } else {
+                // If no text, show the error message
+                $('.info-field-error').show();
+            }
+        });
+    });
+    </script>
+</body>
+
+</html>

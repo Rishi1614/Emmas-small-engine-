@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Equipment Edit</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../CSS/styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="../JavaScript/main.js" ></script>
+    </head>
+    <body>
+        <header class="head-section">
+            <nav>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-close" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a class="head-nav-link" id ="home-link" href="../index.html">Home</a></li>
+                        <li><a class="head-nav-link" id ="customer-link" href="../Customer/index.html">Customers</a></li>
+                        <li><a class="head-nav-link" id ="request-link" href="../RepairRequest/index.html">Repair Request</a></li>
+                        <li><a class="head-nav-link"  id ="repair-link"href="../Repair/index.html">Repairs</a></li>
+                        <li><a class="head-nav-link" id ="equipment-link"  href="../Equipment/index.html">Equipment</a></li>
+                        <li><a class="head-nav-link"  id ="lookup-link"href="../Lookup/index.html">Lookup Tables</a></li>
+                        <li><a class="head-nav-link" id ="report-link"  href="../Reports/index.html">Reports</a></li>
+                        <li><a class = "logout-btn" alt ="Log out button" style = "margin-top:210px" class = "log-out-button">Log out</a></li>
+                    </ul>   
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+    
+            <!-- SCRIPT FOR HAMBURGER MENU -->
+            <script>var navLinks = document.getElementById("navLinks");
+    
+                function showMenu() {
+                    navLinks.style.right = "0";
+                    document.querySelector(".fa-bars").style.display = "none";
+                    document.querySelector(".fa-close").style.display = "block";
+                }
+    
+                function hideMenu() {
+                    navLinks.style.right = "-200px";
+                    document.querySelector(".fa-bars").style.display = "block";
+                    document.querySelector(".fa-close").style.display = "none";
+                }</script>
+                
+        </header>
+        <main class = "main-section">
+            <section class = "main-heading">
+                <div class = "main-heading-title">
+                    <h2 class = "main-heading-head">Equipment Edit</h2>
+                    <h3 class = "main-heading-sub">Generic Equipment - Yellow - ID#12345</h3>
+                    <div class ="main-heading-brdcrumbs">
+                        <a class="brdcrumbs-link" href="../index.html">Home</a> | 
+                        <a class="brdcrumbs-link" href="./index.html">Equipment</a> |
+                        <a class="brdcrumbs-link" href="./details.html">Details</a> |
+                        <a class="brdcrumbs-link" href="./edit.html">Edit</a>
+                    </div>
+                </div>
+            </section>
+            <div class = "main-body">
+                <div class = "main-info-item">
+                    <div class = "main-info-display">
+                        <div class = "info-row">
+                            <label class ="info-label" for = "input-equip-name">Equipment Name:</label> 
+                            <div class = "info-field tooltip">
+                                <div class ="info-field-error">Please add equipment name in the field</div>
+                                <input id = "input-equip-name" class = "info-field-input" type = "text" value="Generic Equipment"> 
+                                <div class="right">
+                                    <h3>Equipment Name</h3>
+                                    <p>Ex: Lawn Mover</p>
+                                    <i></i>
+                                </div>
+                            </div>       
+                        </div>
+                        <div class = "info-row">
+                            <label class ="info-label" for = "input-equip-model">Equipment Model:</label> 
+                            <div class = "info-field tooltip">
+                                <div class ="info-field-error">Please add equipment model in the field</div>
+                                <input id = "input-equip-model" class = "info-field-input" type = "text" value="GE15000">
+                                <div class="right">
+                                    <h3>Equipment Model</h3>
+                                    <p>Ex: GE101001</p>
+                                    <i></i>
+                                </div>
+                            </div>       
+                        </div>
+                        <div class = "info-row">
+                            <label class ="info-label" for = "input-equip-serial">Equipment Serial Number:</label> 
+                            <div class = "info-field tooltip">
+                                    <div class ="info-field-error">Please add equipment serial number in the field</div>
+                                <input id = "input-equip-serial" class = "info-field-input" type = "text" value="GE20201010"> 
+                                <div class="right">
+                                    <h3>Equipment Serial No.</h3>
+                                    <p>Ex: GE30302020</p>
+                                    <i></i>
+                                </div>
+                            </div>       
+                        </div>
+                        <div class = "info-row">
+                            <label class ="info-label" for = "input-equip-notes">Equipment Notes:</label> 
+                            <div class = "info-field tooltip"><input id = "input-equip-notes" class = "info-field-input" type = "text" value="Start-Stop button"> 
+                            <div class="right">
+                                    <h3>Equipment Notes</h3>
+                                    <p>Ex: Start-Stop Button</p>
+                                    <i></i>
+                                </div></div>       
+                        </div>
+                        <div class="info-row">
+                            <label class ="info-label" for = "input-equip-type">Equipment Type:</label> 
+                            <div class = "info-field tooltip">
+                                <div class ="info-field-error">Please select an equipment type in the dropdown</div>
+                                <div class="info-field-group">
+                                    <select class = "info-select" id = "input-equip-type" style = "width:82%">
+                                        <option>Select an Equipment Type..</option>
+                                        <option selected>Rotary mower</option>
+                                        <option>Robotic lawn mower</option>
+                                        <option>Cylinder mower</option>
+                                        <option>Zero-turn mower</option>
+                                        <option>Electric lawn mower</option>
+                                        <option>Gas powered mower</option>
+                                        <option>Reel mower</option>
+                                        <option>Rear Engine mower</option>
+                                    </select>
+                                    <div class="right">
+                                        <h3>Equipment Type</h3>
+                                        <p>Please select a type from the given dropdown or add a type if not present</p>
+                                        <i></i>
+                                    </div>
+                                    <button style ="width:15%;" class ="btn-edit-dropdowns">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <label class ="info-label" for = "input-equip-type">Equipment Colour:</label> 
+                            <div class = "info-field tooltip">
+                                <div class ="info-field-error">Please select an equipment colour in the dropdown</div>
+                                <div class="info-field-group">
+                                    <select class = "info-select" id = "input-equip-type" style = "width:82%">
+                                        <option>Select a Colour..</option>
+                                        <option>Black</option>
+                                        <option>Yellow</option>
+                                        <option>Blue</option>
+                                        <option>White</option>
+                                        <option>Grey</option>
+                                        <option selected>Green</option>
+                                        <option>Purple</option>
+                                        <option>Red</option>
+                                    </select>
+                                    <div class="right">
+                                        <h3>Equipment Colour</h3>
+                                        <p>Please select a Colour from the given dropdown or add a Colour if not present</p>
+                                        <i></i>
+                                    </div>
+                                    <button style ="width:15%;" class ="btn-edit-dropdowns">+</button>
+                                </div>
+                            </div>
+                        </div>                    
+                        <div class="info-row">
+                            <label class="info-label" for="input-manufacturer">Manufacturer:</label>
+                            <div class = "info-field tooltip">
+                                <div class="info-field-error">Please select a manufacturer in the dropdown</div>
+                                <div class="info-field-group">
+                                    <select class="info-select" id="input-manufacturer" style="width: 82%">
+                                        <option>Select a Manufacturer..</option>
+                                        <option selected>Yamaha</option>
+                                        <option>Bosch</option>
+                                        <option>Continental</option>
+                                        <option>MagnaFlow</option>
+                                        <option>Gates</option>
+                                        <option>Monroe</option>
+                                        <option>American Standard</option>
+                                        <option>Bradford White</option>
+                                    </select>
+                                    <div class="right">
+                                        <h3>Equipment Manufacturer</h3>
+                                        <p>Please select a Manufacturer from the given dropdown or add a Manufacturer if not present</p>
+                                        <i></i>
+                                    </div>
+                                    <button style="width: 15%;" class="btn-edit-dropdowns">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                     <div class = "main-info-table">
+                        <div class ="table-header-group">
+                            <h2 class="table-header">Customers</h2> 
+                        </div>
+                        <table class = "main-table-container">
+                            <tr class = "main-info-tablerow" >
+                                <th class = "main-info-tablehead" style ="width:17%">    <button class ="btn-table">New(+)</button></th>
+                              
+                                <th class = "main-info-tablehead" style="width:33%">Customer Name</th>
+                                <th class = "main-info-tablehead" style="width:25%">Customer Email</th>
+                                <th class = "main-info-tablehead" style="width:25%">Customer Phone</th>
+                            </tr>
+                            <tr class = "main-info-tablerow">
+                                <td class = "main-info-tabledata" style="width:17%"><a href="" class = "table-link">Delete (X)</a></td>
+                              
+                                <td class = "main-info-tabledata" style="width:33%">Jane Doe</td>
+                                <td class = "main-info-tabledata"style="width:25%">jdoe@gmail.com</td>
+                                <td class = "main-info-tabledata"style="width:25%">(923)-052-5355</td>
+                            </tr>
+                            <tr class = "main-info-tablerow">
+                                <td class = "main-info-tabledata" style="width:17%"><a href="" class = "table-link">Delete (X)</a></td>
+                              
+                                <td class = "main-info-tabledata" style="width:33%">Bill Delos Santos</td>
+                                <td class = "main-info-tabledata"style="width:25%">bdesantos@gmail.com</td>
+                                <td class = "main-info-tabledata"style="width:25%">(905)-132-8631</td>
+                            </tr>
+                            <tr class = "main-info-tablerow">
+                                <td class = "main-info-tabledata" style="width:17%"><a href="" class = "table-link">Delete (X)</a></td>
+                               
+                                <td class = "main-info-tabledata" style="width:33%">William Chang</td>
+                                <td class = "main-info-tabledata"style="width:25%">wchang@gmail.com</td>
+                                <td class = "main-info-tabledata"style="width:25%">(963)-034-7621</td>
+                            </tr>
+                            <tr class = "main-info-tablerow">
+                                <td class = "main-info-tabledata" style="width:17%"><a href="" class = "table-link">Delete (X)</a></td>
+                               
+                                <td class = "main-info-tabledata" style="width:33%">Amy Hicks</td>
+                                <td class = "main-info-tabledata"style="width:25%">ahicks@gmail.com</td>
+                                <td class = "main-info-tabledata"style="width:25%">(921)-055-6622</td>
+                            </tr>
+                         </table>
+                        <div class="main-info-paging">
+                            <button class = "paging-btn">&lt;&lt; Previous</button>
+                            <button class = "paging-btn">1</button>
+                            <button class = "paging-btn">2</button>
+                            <button class = "paging-btn">Next &gt;&gt;</button>
+                        </div>
+                      
+                    </div>
+                </div>
+                <div class = "main-info-buttons">
+                    <a href = "../Customer/edit.html" class = "btn-info btn-edit">Update Equipment</a>
+                    <a href = "../Customer/edit.html" class = "btn-info btn-edit">Cancel</a>
+                </div>
+            </div>
+            <footer class = "foot-main">
+                <p class="foot-text">Application Developed By<br>
+                    &copy;2023 TechLink Software</p>
+                <!--<a href="" class ="foot-text">Sitemap</a>-->
+                <div class ="foot-links">
+                    <a href= ""><img class = "contact-link" src="../images/facebook-icon.png" alt="ESE Facebook page"></a>
+                    <a href= ""> <img class = "contact-link" src="../images/instagram-icon.png" alt="ESE Instragram page"></a>
+                    <a href= ""><img class = "contact-link"  src="../images/twitter-icon.png" alt="ESE Twitter page"></a>
+                    <a href= ""><img class = "contact-link" src="../images/whatsapp-icon.png" alt="ESE Whatsapp contact"></a>
+                </div>
+            </footer>
+        </main>
+    </body>
+</html>

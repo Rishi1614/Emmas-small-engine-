@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warranty Report Preview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .report-container {
+            width: 80%;
+            margin: auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #download-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: 2px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="margin-bottom: 0;"><img src ="../images/sample-Logo2.png" alt ="Emma Small Engines Logo" style="height: 100px; background-color: transparent;"></h1>
+    <h1 style="margin: 0;">Warranty Report</h1>
+
+    <button id="download-btn" onclick="downloadReport()">Download Report</button>
+
+    <div class="report-container">
+        <h3>Report for repairs.</h3>
+        <p style="margin-bottom: 0px"><strong><small>From: 2023/11/01</small></strong></p>
+        <p style="margin: 0px;"><strong><small>To: 2023/11/30</small></strong></p>
+        <p></p>
+        <p style="margin-bottom: 0px;"><strong><small>Prepared By: Emily (Admin)</small></strong></p>
+        <p style="margin: 0px;"><strong><small>Run Date: <span><input id="report-date"
+                            style="border-style: none; background-color: transparent; font-weight: bold;"
+                            disabled></span></small></strong></p>
+        <hr/>
+
+        <p>Total Number of Repairs: <span><input type="number" id="report-date" value="22"
+            style="background-color: transparent; text-align: center; width: 50px;"
+            disabled></span></p>
+        <p>Total Warranty Repairs:<span><input type="number" id="report-date" value="10"
+            style="background-color: transparent; text-align: center; width: 50px;"
+            disabled></span></p>
+        <table id="reportTable" border="1" style="width:100%;">
+
+            <thead>
+                <th>Repair ID</th>
+                <th>Repair Date</th>
+                <th>Customer Name</th>
+                <th>Equipment Name</th>
+                <th>Technician Name</th>
+                <th>Total Cost of Repair</th>
+                <th>Warranty?</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="7">
+                        <p style="margin-bottom: 0px;">Manufacturer: <span style="font-weight: bold;">Bosch</span></p>
+                        <p style="margin: 0px;">Total Repair Amount: <span style="font-weight: bold;">$ 202.54</span></p>
+                        <p style="margin: 0px;">Total Warranty Amount: <span style="font-weight: bold;">$ 54.99</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>0220</td>
+                    <td>2023-11-02</td>
+                    <td>David Wilson</td>
+                    <td>Pressure Washer PW-400</td>
+                    <td>John Smith</td>
+                    <td>$ 54.99</td>
+                    <td style="text-align: center;">Yes</td>
+                </tr>
+                <tr>
+                    <td>0220</td>
+                    <td>2023-11-02</td>
+                    <td>Jane Doe</td>
+                    <td>Circular Saw CS-900</td>
+                    <td>Harry Kane</td>
+                    <td>$ 97.56</td>
+                    <td style="text-align: center;">No</td>
+                </tr>
+                
+                <tr>
+                    <td>0220</td>
+                    <td>2023-11-02</td>
+                    <td>Michael Smith</td>
+                    <td>Trencher TR-1200</td>
+                    <td>Thomas Muller</td>
+                    <td>$ 49.99</td>
+                    <td style="text-align: center;">No</td>
+                </tr>
+                <tr>
+                   <td colspan="7" style="border: none;">
+                        <hr/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="7">
+                        <p style="margin-bottom: 0px;">Manufacturer: <span style="font-weight: bold;">Craftsman</span></p>
+                        <p style="margin: 0px;">Total Repair Amount: <span style="font-weight: bold;">$ 177.54</span></p>
+                        <p style="margin: 0px;">Total Warranty Amount: <span style="font-weight: bold;">$ 29.99</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>0222</td>
+                    <td>2023-11-06</td>
+                    <td>Ethan Miller</td>
+                    <td>Power Drill PD-550</td>
+                    <td>David Lee</td>
+                    <td>$ 29.99</td>
+                    <td style="text-align: center;">Yes</td>
+                </tr>
+                <tr>
+                    <td>0220</td>
+                    <td>2023-11-02</td>
+                    <td>Oilivia Anderson</td>
+                    <td>Circular Saw CS-900</td>
+                    <td>Harry Kane</td>
+                    <td>$ 97.56</td>
+                    <td style="text-align: center;">No</td>
+                </tr>
+                <tr>
+                    <td>0220</td>
+                    <td>2023-11-02</td>
+                    <td>James Lee</td>
+                    <td>Trencher TR-1200</td>
+                    <td>Thomas Muller</td>
+                    <td>$ 49.99</td>
+                    <td style="text-align: center;">No</td>
+                </tr>
+                <tr>
+                    <td colspan="7" style="border: none;">
+                        <hr/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="7">
+                        <p style="margin-bottom: 0px;">Manufacturer: <span style="font-weight: bold;">John Deere</span></p>
+                        <p style="margin: 0px;">Total Repair Amount: <span style="font-weight: bold;">$ 345.09</span></p>
+                        <p style="margin: 0px;">Total Warranty Amount: <span style="font-weight: bold;">$ 49.99</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>0215</td>
+                    <td>2023-11-02</td>
+                    <td>Emily Brown</td>
+                    <td>Leaf Blower LB-350</td>
+                    <td>Harry Kane</td>
+                    <td>$ 49.99</td>
+                    <td style="text-align: center;">Yes</td>
+                </tr>
+                <tr>
+                    <td>0220</td>
+                    <td>2023-11-02</td>
+                    <td>Oilivia Anderson</td>
+                    <td>Circular Saw CS-900</td>
+                    <td>Harry Kane</td>
+                    <td>$ 97.56</td>
+                    <td style="text-align: center;">No</td>
+                </tr>
+                <tr>
+                    <td>0220</td>
+                    <td>2023-11-02</td>
+                    <td>James Lee</td>
+                    <td>Trencher TR-1200</td>
+                    <td>Thomas Muller</td>
+                    <td>$ 49.99</td>
+                    <td style="text-align: center;">No</td>
+                </tr>
+                <tr>
+                    <td>0220</td>
+                    <td>2023-11-02</td>
+                    <td>Jane Doe</td>
+                    <td>Circular Saw CS-900</td>
+                    <td>Harry Kane</td>
+                    <td>$ 97.56</td>
+                    <td style="text-align: center;">No</td>
+                </tr>
+                <tr>
+                    <td>0220</td>
+                    <td>2023-11-02</td>
+                    <td>Michael Smith</td>
+                    <td>Trencher TR-1200</td>
+                    <td>Thomas Muller</td>
+                    <td>$ 49.99</td>
+                    <td style="text-align: center;">No</td>
+                </tr>
+                <tr>
+                    <td colspan="7" style="border: none;">
+                        <hr/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="7">
+                        <p style="margin-bottom: 0px;">Manufacturer: <span style="font-weight: bold;">Kawasaki</span></p>
+                        <p style="margin: 0px;">Total Repair Amount: <span style="font-weight: bold;">$ 0.00</span></p>
+                        <p style="margin: 0px;">Total Warranty Amount: <span style="font-weight: bold;">$ 0.00</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="7">
+                        <p>No Repairs for this Manufacturer.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="7" style="border: none;">
+                        <hr/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="7">
+                        <p style="margin-bottom: 0px;">Manufacturer: <span style="font-weight: bold;">Honda</span></p>
+                        <p style="margin: 0px;">Total Repair Amount: <span style="font-weight: bold;">$ 199.99</span></p>
+                        <p style="margin: 0px;">Total Warranty Amount: <span style="font-weight: bold;">$ 199.99</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>0210</td>
+                    <td>2023-11-01</td>
+                    <td>Michael Smith</td>
+                    <td>Welding Machine WM-500</td>
+                    <td>David Lee</td>
+                    <td>$ 199.99</td>
+                    <td style="text-align: center;">Yes</td>
+                </tr>
+                <tr>
+                    <td colspan="7" style="border: none;">
+                         <hr/>
+                     </td>
+                 </tr>
+                <tr>
+                    <td colspan="7">
+                        <p style="margin-bottom: 0px;">Manufacturer: <span style="font-weight: bold;">Manroe</span></p>
+                        <p style="margin: 0px;">Total Repair Amount: <span style="font-weight: bold;">$ 297.52</span></p>
+                        <p style="margin: 0px;">Total Warranty Amount: <span style="font-weight: bold;">$ 149.97</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>0225</td>
+                    <td>2023-11-08</td>
+                    <td>Samuel Hall</td>
+                    <td>Lawn Mower LM-500</td>
+                    <td>Harry Kane</td>
+                    <td>$ 49.99</td>
+                    <td style="text-align: center;">Yes</td>
+                </tr>
+                <tr>
+                    <td>0228</td>
+                    <td>2023-11-12</td>
+                    <td>Olivia Anderson</td>
+                    <td>Lawn Mower LM-500</td>
+                    <td>Harry Kane</td>
+                    <td>$ 49.99</td>
+                    <td style="text-align: center;">Yes</td>
+                </tr>
+                <tr>
+                    <td>0249</td>
+                    <td>2023-11-19</td>
+                    <td>James Lee</td>
+                    <td>Lawn Mower LM-500</td>
+                    <td>John Smith</td>
+                    <td>$ 49.99</td>
+                    <td style="text-align: center;">Yes</td>
+                </tr>
+                <tr>
+                    <td>0220</td>
+                    <td>2023-11-02</td>
+                    <td>Sane Tonry</td>
+                    <td>Circular Saw CS-900</td>
+                    <td>Harry Kane</td>
+                    <td>$ 97.56</td>
+                    <td style="text-align: center;">No</td>
+                </tr>
+                <tr>
+                    <td>0220</td>
+                    <td>2023-11-02</td>
+                    <td>Karim Benzima</td>
+                    <td>Trencher TR-1200</td>
+                    <td>Thomas Muller</td>
+                    <td>$ 49.99</td>
+                    <td style="text-align: center;">No</td>
+                </tr>
+                <tr>
+                    <td colspan="7" style="border: none;">
+                        <hr/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="7">
+                        <p style="margin-bottom: 0px;">Manufacturer: <span style="font-weight: bold;">Yamaha</span></p>
+                        <p style="margin: 0px;">Total Repair Amount: <span style="font-weight: bold;">$ 440.42</span></p>
+                        <p style="margin: 0px;">Total Warranty Amount: <span style="font-weight: bold;">$ 292.87</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>0201</td>
+                    <td>2023-11-01</td>
+                    <td>Jane Doe</td>
+                    <td>Excavator Ex-2000</td>
+                    <td>Harry Kane</td>
+                    <td>$ 129.99</td>
+                    <td style="text-align: center;">Yes</td>
+                </tr>
+                <tr>
+                    <td>0221</td>
+                    <td>2023-11-05</td>
+                    <td>Joe Willock</td>
+                    <td>Excavator Ex-2000</td>
+                    <td>John Smith</td>
+                    <td>$ 52.89</td>
+                    <td style="text-align: center;">Yes</td>
+                </tr>
+                <tr>
+                    <td>0256</td>
+                    <td>2023-11-22</td>
+                    <td>Daniel Cans</td>
+                    <td>Excavator Ex-2000</td>
+                    <td>David Lee</td>
+                    <td>$ 109.99</td>
+                    <td style="text-align: center;"> Yes</td>
+                </tr>
+                <tr>
+                    <td>0220</td>
+                    <td>2023-11-02</td>
+                    <td>Oilivia Anderson</td>
+                    <td>Circular Saw CS-900</td>
+                    <td>Harry Kane</td>
+                    <td>$ 97.56</td>
+                    <td style="text-align: center;">No</td>
+                </tr>
+                <tr>
+                    <td>0220</td>
+                    <td>2023-11-02</td>
+                    <td>James Lee</td>
+                    <td>Trencher TR-1200</td>
+                    <td>Thomas Muller</td>
+                    <td>$ 49.99</td>
+                    <td style="text-align: center;">No</td>
+                </tr>
+                <tr>
+                    <td colspan="7" style="border: none;">
+                        <hr/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="7">
+                        <p style="text-align: center;">**** End of the report ***</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function downloadReport() {
+            const table = document.getElementById("reportTable");
+            const rows = table.querySelectorAll("tr");
+            const data = [];
+
+
+            // Loop through rows and cells to get data
+            for (let i = 0; i < rows.length; i++) {
+                const row = rows[i];
+                const cells = row.querySelectorAll("td, th");
+                const rowData = [];
+                for (let j = 0; j < cells.length; j++) {
+                    rowData.push(cells[j].innerText);
+                }
+                data.push(rowData.join(","));
+            }
+
+            // Add report run date and run time
+            const runDate = new Date().toLocaleDateString();
+            const runTime = new Date().toLocaleTimeString();
+            const runBy = "John Snow"
+            const runInfo = [`Report Run By: $ {runBy}`, `Report Run Date: $ {runDate}`, `Run Time: $ {runTime}`];
+            data.push(runInfo.join(","));
+
+            // Create a CSV file content
+            const csvContent = "data:text/csv;charset=utf-8," + data.join("\n");
+
+            // Create a link and trigger download
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "Warranty Repair Report.csv");
+            document.body.appendChild(link);
+            link.click();
+        }
+
+        const currentDate = new Date().toLocaleDateString('en-CA');
+
+        // Set the current date as the value of the input field
+        document.getElementById('report-date').value = currentDate;
+    </script>
+</body>
+
+</html>

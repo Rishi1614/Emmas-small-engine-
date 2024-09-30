@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Customer Index</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../CSS/styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="../JavaScript/main.js"></script>
+    </head>
+    <body>
+        <header class="head-section">
+            <nav>
+                <div class="head-profile-section">
+                    <img class="head-profile-img" src="../images/profile_pic.jpg" alt="Profile Picture">
+                    <div class="head-profile-text">Emma</div>
+                </div>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-close" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a class="head-nav-link" id ="home-link" href="../index.html">Home</a></li>
+                        <li><a class="head-nav-link" id ="customer-link" href="../Customer/index.html">Customers</a></li>
+                        <li><a class="head-nav-link" id ="request-link" href="../RepairRequest/index.html">Repair Request</a></li>
+                        <li><a class="head-nav-link"  id ="repair-link"href="../Repair/index.html">Repairs</a></li>
+                        <li><a class="head-nav-link" id ="equipment-link"  href="../Equipment/index.html">Equipment</a></li>
+                        <li><a class="head-nav-link"  id ="lookup-link"href="../Lookup/index.html">Lookup Tables</a></li>
+                        <li><a class="head-nav-link" id ="report-link"  href="../Reports/index.html">Reports</a></li>
+                        <li><a class = "logout-btn" alt ="Log out button" style = "margin-top:210px" class = "log-out-button">Log out</a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+    
+            <!-- SCRIPT FOR HAMBURGER MENU -->
+            <script>var navLinks = document.getElementById("navLinks");
+    
+                function showMenu() {
+                    navLinks.style.right = "0";
+                    document.querySelector(".fa-bars").style.display = "none";
+                    document.querySelector(".fa-close").style.display = "block";
+                }
+    
+                function hideMenu() {
+                    navLinks.style.right = "-200px";
+                    document.querySelector(".fa-bars").style.display = "block";
+                    document.querySelector(".fa-close").style.display = "none";
+                }</script>
+                
+        </header>
+        <main class = "main-section">
+            <section class = "main-heading">
+                <div class = "main-heading-title">
+                    <h1 class = "main-heading-head">Customers
+                        <span class = "help-btn-group tooltip-help">
+                            <button class ="help-btn">?</button>  
+                            <span class="tooltip-help-text">
+                                <strong>Customer Help:</strong>
+                                <p> 1- In the Customer Page you can see the ID,Customer Full Name, email and phone number.  </p><br/>
+                                <p>2- You can click on any customer box and you will see all of their details, including previous repair request, 
+                                    equipments they have brought and add a new repair request.</p><br/>
+                                <p> 3- By clicking on "+ Add new Customer" button you can add a new customer with all of their details.</p><br/>
+                                <p> 4- With the search bar you can search a customer by their name, sort them or group them.</p>
+                                <i></i>
+                            </span>
+                        </span>
+                    </h1>
+                    <a href = "./insert.html" class = "btn-add">+ Add New Customer</a>
+                    <div class ="main-heading-brdcrumbs">
+                        <a class="brdcrumbs-link" href="../index.html">Home</a> | 
+                        <a class="brdcrumbs-link" href="./index.html">Customers</a>
+                    </div>
+                </div>
+                <div class = "main-heading-input">
+                    <div class = "main-heading-input-section">
+                        <div class = "input-group">
+                            <input id = "main-search-input" name = "search" class = "form-input" type="text" placeholder="Search...">
+                            <label for = "main-search-input" class = "form-label">Search...</label>
+                        </div>
+                        <button class = "search-btn"><img class ="search-btn-img" src="../images/search-icon.png" alt="search image"></button>
+                    </div>
+                    <div class = "main-heading-input-section" style="    padding-right:5rem;">
+                        <div class ="select-wrapper">
+                            <select class = "main-select">
+                                <option value="" disabled selected>Sort By</option>
+                                <option>Name</option>
+                                <option>ID</option>
+                                <option>Modified Date</option>
+                            </select>
+                        </div>
+                        <div class ="select-wrapper">
+                            <select class = "main-select">
+                                <option value="" disabled selected>Group By</option>
+                                <option>City</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class = "main-body">
+                <div class="main-body-row">
+                    <a class="main-body-item" href = "./details.html">
+                        <div class="item-title">ID#123 <br> Jane Doe <br> janedoe@gmail.com <br>(123)456-7890</div>
+                    </a>
+                    <a class="main-body-item" href = "./details.html">
+                        <div class="item-title">ID#124 <br> Michael Smith <br> michaels@gmail.com <br>(124)456-7890</div>
+                    </a>
+                    <a class="main-body-item" href = "./details.html">
+                        <div class="item-title">ID#125 <br> Emily Brown <br> emilyb@gmail.com <br>(125)456-7890</div>
+                    </a>
+                    <a class="main-body-item" href = "./details.html">
+                        <div class="item-title">ID#126 <br> David Wilson <br> daviddz20@gmail.com <br>(126)458-7890</div>
+                    </a>
+                </div>
+                <div class="main-body-row">
+                    <a class="main-body-item" href = "./details.html">
+                        <div class="item-title">ID#139 <br> Dwayne Johnson <br> rock@gmail.com <br>(128)456-7800</div>
+                    </a>
+                    <a class="main-body-item" href = "./details.html">
+                        <div class="item-title">ID#138 <br> Joe Willock <br> willock@gmail.com <br>(138)458-7970</div>
+                    </a>
+                    <a class="main-body-item" href = "./details.html">
+                        <div class="item-title">ID#136 <br> Ethan Miller  <br> 10mincarlitos@gmail.com <br>(136)497-7053</div>
+                    </a>
+                    <a class="main-body-item" href = "./details.html">
+                        <div class="item-title">ID#134 <br> Samuel Hall  <br> tuki@gmail.com <br>(134)497-7080</div>
+                    </a>
+                </div>
+                <div class="main-body-row">
+                    <a class="main-body-item" href = "./details.html">
+                        <div class="item-title">ID#129 <br> Olivia Anderson  <br> olird@gmail.com <br>(129)458-7570</div>
+                    </a>
+                    <a class="main-body-item" href = "./details.html">
+                        <div class="item-title">ID#130 <br> James Lee  <br> jameeeees@gmail.com <br>(130)458-7570</div>
+                    </a>
+                    <a class="main-body-item" href = "./details.html">
+                        <div class="item-title">ID#131 <br> Sophia Martinez  <br> sophi@gmail.com <br>(131)487-7570</div>
+                    </a>
+                    <a class="main-body-item" href = "./details.html">
+                        <div class="item-title">ID#132 <br> Benjamin White  <br> whiteknight@gmail.com <br>(132)497-7570</div>
+                    </a>
+                </div>
+                <div class="main-body-row">
+                    <a class="main-body-item" href = "./details.html">
+                        <div class="item-title">ID#137 <br> Koldo Perez <br> koldito@gmail.com <br>(128)456-7975</div>
+                    </a>
+                    <a class="main-body-item" href = "./details.html">
+                        <div class="item-title">ID#136 <br> Daniel Caps <br> nautimid@gmail.com <br>(139)458-7560</div>
+                    </a>
+                    <a class="main-body-item" href = "./details.html">
+                        <div class="item-title">ID#146 <br> Jose Deodo  <br> josedeodo@gmail.com <br>(139)497-7653</div>
+                    </a>
+                    <a class="main-body-item" href = "./details.html">
+                        <div class="item-title">ID#144 <br> Xico Coentrao  <br> xiquitin@gmail.com <br>(144)497-7089</div>
+                    </a>
+                </div>
+                
+            </div>
+            <div class="main-paging-section">
+                <button class = "paging-btn">&lt;&lt; Previous</button>
+                <button class = "paging-btn">1</button>
+                <button class = "paging-btn">2</button>
+                <button class = "paging-btn">3</button>
+                <button class = "paging-btn">4</button>
+                <button class= "paging-btn">5</button>
+                <button class = "paging-btn">Next &gt;&gt;</button>
+            </div>
+            <footer class = "foot-main">
+                <p class="foot-text">Application Developed By<br>
+                    &copy;2023 TechLink Software</p>
+                <!--<a href="" class ="foot-text">Sitemap</a>-->
+                <div class ="foot-links">
+                    <a href= ""><img class = "contact-link" src="../images/facebook-icon.png" alt="ESE Facebook page"></a>
+                    <a href= ""> <img class = "contact-link" src="../images/instagram-icon.png" alt="ESE Instragram page"></a>
+                    <a href= ""><img class = "contact-link"  src="../images/twitter-icon.png" alt="ESE Twitter page"></a>
+                    <a href= ""><img class = "contact-link" src="../images/whatsapp-icon.png" alt="ESE Whatsapp contact"></a>
+                </div>
+            </footer>
+        </main>
+    </body>
+</html>
